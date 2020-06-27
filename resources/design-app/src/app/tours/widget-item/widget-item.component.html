@@ -1,0 +1,16 @@
+<mat-accordion>
+  <mat-expansion-panel style="background: transparent;box-shadow: none;">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{title}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="item-content">
+      <ul>
+        <li *ngFor="let item of items">
+          <mat-checkbox>{{item.content}}</mat-checkbox>
+        </li>
+      </ul>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

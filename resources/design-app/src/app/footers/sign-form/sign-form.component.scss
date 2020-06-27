@@ -1,0 +1,35 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.subscribe{
+  margin-bottom: 20px;
+}
+
+.seperator a{
+  color: white;
+  font-size: 13px;
+  line-height: 1.9;
+  padding: 5px 0;
+  margin-right: 4px;
+}
+
+.seperator a:hover{
+  text-decoration: underline;
+}
+
+.social-media ul li {
+  float: left;
+  margin: 0 5px 0 0;
+}
+
+.social-media ul li a{
+  width: 32px;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.social-media{
+  margin-top: 15px;
+}

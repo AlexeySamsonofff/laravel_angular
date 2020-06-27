@@ -1,0 +1,44 @@
+<section class="container-fluid" style="background: #f9f9f9; padding-bottom: 40px;">
+  <div class="container">
+    <div class="headers">
+      <div>
+        <h1 style="text-transform: capitalize; font-weight: bold;color: rgb(80, 80, 80);">hotel riu plaza miami beach</h1>
+        <div style="margin-top: 10px;">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+      </div>
+      <div style="margin-top: 10px;">
+        <b style="font-size: 15px;color: rgb(80, 80, 80);">US$98</b>
+        <button type="button" class="btn btn-primary btn-book">Book Now</button>
+      </div>
+    </div>
+    <div class="img-banner flex-container">
+      <div>
+        <img src="assets/images/beach1.png" class="img-fluid">
+      </div>
+      <div>
+        <img src="assets/images/beach2.png" class="img-fluid">
+      </div>
+      
+    </div>
+    <div class="content-pass">
+      <form [formGroup]="dayPassFormGroup" style="margin-bottom: 30px;">
+        <h3>Select date and participants</h3>
+        <div class="flex-container">
+          <input type="date" class="form-control pass-form" formControlName="dates">
+          <span class="space"></span>
+          <input type="text" class="form-control pass-form" formControlName="people">
+          <span class="space"></span>
+          <input type="submit" class="btn btn-primary pass-form" value="Show Availability" style="background-color: rgb(0, 163, 255);">
+        </div>
+      </form>
+      <app-item-pass></app-item-pass>
+      <app-item-pass></app-item-pass>
+    </div>
+    <app-description></app-description>
+  </div>
+</section>

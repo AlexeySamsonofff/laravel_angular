@@ -1,0 +1,30 @@
+* {
+  color: white;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+}
+
+ul > li{
+  margin-bottom: 8px;
+}
+
+h4{
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+ul a{
+  color: #fff;
+  font-size: 13px;
+  opacity: 0.9;
+  line-height: 1.9;
+}
+
+ul a:hover{
+  text-decoration: underline;
+}

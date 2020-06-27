@@ -1,0 +1,508 @@
+<div class="banner">
+  <div class="text-vertical-center">
+    <div class="tab-wrapper">
+      <section id="reservation-form" class="pos-inside-slide">
+        <div class="row2 search-area no-padding">
+          <ul class="nav nav-tabs">
+            <li class="active"><a class="nav-link" href="#hotels" data-toggle="tab">Hotels</a></li>
+            <li><a class="nav-link" href="#daypass" data-toggle="tab">DayPass</a></li>
+            <li><a class="nav-link" href="#tours" data-toggle="tab">Tours</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="hotels">
+              <form [formGroup]="hotelFormGroup" id="hotels-tab" class="tab-pane active" method="post">
+<!--                <p>Hotel Tab</p>-->
+<!--                <div class="row">-->
+                  <div class="col-12 col-sm-3">
+                    <div class="form-group">
+                      <label class="sr-only" for="destination2">Destination</label>
+                      <input type="text" formControlName="city" name="cityName" class="form-control autocity" id="destination2" placeholder="Enter a City or Airport" autocomplete="off" (click)="toggleHotelAjaxForm()" onclick="this.select();" pop-type="hotels-tab" required="">
+                      <input type="hidden" name="cityid" class="cityid" id="hotelcityid">
+                    </div>
+                    <span class="active_ajax" style="display: none;"></span>
+                    <div class="ajax_dropdown" *ngIf="hotelDropDownShow">
+                      <div class="ajax_dropdown_div" id="ajax_dropdown_div" click-type="hotels-tab">
+                        <div class="title">Popular Cities</div><div class="dropdown-div">
+                        <ul class="dropdown-list row2" id="ajax-result">
+                          <li class="num_21052" data-num="21052">
+                            <div class>
+                              <span class="name" data-val="21052" data-country="Jamaica">Kingston</span>
+                            </div>
+                          </li>
+                          <li class="num_21057" data-num="21057">
+                            <div class="">
+                              <span class="name" data-val="21057" data-country="Jamaica">Montego Bay</span>
+                            </div>
+                          </li>
+                          <li class="num_21059" data-num="21059">
+                            <div class="">
+                              <span class="name" data-val="21059" data-country="Jamaica">Negril</span>
+                            </div>
+                          </li>
+                          <li class="num_21060" data-num="21060">
+                            <div class="">
+                              <span class="name" data-val="21060" data-country="Jamaica">Ocho Rios</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-2">
+                    <div class="form-group">
+                      <label class="sr-only" for="dph1">Check-In</label>
+                      <!--                    <input name="checkIn" type="text" value="" class="form-control calendar autodate" placeholder="Check-in" id="dph1" autocomplete="off" required>-->
+                      <input type="date" formControlName="start_date" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-2">
+                    <div class="form-group">
+                      <label class="sr-only" for="dph2">Check-Out</label>
+                      <!--                    <input name="checkOut" type="text" value="" class="form-control calendar" placeholder="Check-out"  id="dph2" autocomplete="off" required>-->
+                      <input type="date" formControlName="end_date" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-3 pax_drop">
+                    <div class="form-group" (click)="this.hotelPopUpShow = true">
+                      <!-- <label for="">No of Guests</label> -->
+                      <span class="form-control c-round c-theme travellers-input" id="travellers-hotel">
+                      <span class="adultsF travellers-input">1</span> adult,
+                      <span class="childsF travellers-input">0</span> child,
+                      <span class="room_countF travellers-input">1</span> Room
+                    </span>
+                    </div>
+                    <div class="travellers-input-popup" id="travellers-hotel-popup" *ngIf="hotelPopUpShow">
+                      <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+                      <!-- <label>Occupancy</label> -->
+                      <div class="trip-options">
+                        <p>Room - <span>1</span></p>
+                        <div class="numstepper small-btns">
+                          <button type="button" class="quantity-btn quantity-left-minus btn-number-rooms"  data-type="minus" data-field="room_count"></button>
+                          <input type="text" name="room_count" class="quantity-input input-number multi" value="1" min="1" max="4">
+                          <button type="button" class="quantity-btn quantity-right-plus btn-number-rooms" data-type="plus" data-field="room_count"></button>
+                        </div>
+                        <div class="clone-room">
+                          <p class="rooms" style="display: none;">Room - <span>2</span></p>
+                          <!---->
+                          <div class="numstepper small-btns">
+                            <p>Adults</p>
+                            <button type="button" class="quantity-btn quantity-left-minus btn-number-arr" data-type="minus" data-field="adults">
+                            </button>
+                            <input type="text" name="adults[]" class="quantity-input input-number adults" value="1" min="1" max="14">
+                            <button type="button" class="quantity-btn quantity-right-plus btn-number-arr" data-type="plus" data-field="adults">
+                            </button>
+                          </div>
+                          <!---->
+                          <div class="clone-item roomage">
+                            <input type="hidden" class="roomsno" value="1">
+                            <p style="display: none;">Child Age - <span>1</span></p>
+                            <div class="numstepper small-btns">
+                              <p>Children</p>
+                              <button type="button" class="quantity-btn quantity-left-minus btn-number-multi roomAge" data-type="minus" data-field="childs">
+                              </button>
+                              <input type="text" name="childs[]" class="quantity-input input-number multi childs" value="0" min="0" max="3">
+                              <!---->
+                              <button type="button" class="quantity-btn quantity-right-plus btn-number-multi roomAge" data-type="plus" data-field="childs">
+                              </button>
+                            </div>
+                          </div>
+                          <div class="clonediv"></div>
+                        </div>
+                        <div class="clonediv-room">
+                          <div class="clone-room" id="clone-room-2">
+                            <p class="rooms" style="display: block;">Room - <span>2</span></p>
+
+                            <div class="numstepper small-btns">
+                              <p>Adults</p>
+                              <button type="button" class="quantity-btn quantity-left-minus btn-number-arr"
+                                      data-type="minus" data-field="adults">
+                              </button>
+                              <input type="text" name="adults[]" class="quantity-input input-number adults" value="1"
+                                     min="1" max="14" readonly="">
+                              <button type="button" class="quantity-btn quantity-right-plus btn-number-arr"
+                                      data-type="plus" data-field="adults">
+                              </button>
+                            </div>
+
+                            <div class="clone-item roomage">
+                              <input type="hidden" class="roomsno" value="2">
+                              <p style="display: none;">Child Age - <span>1</span></p>
+                              <div class="numstepper small-btns">
+                                <p>Children</p>
+                                <button type="button" class="quantity-btn quantity-left-minus btn-number-multi roomAge"
+                                        data-type="minus" data-field="childs">
+                                </button>
+                                <input type="text" name="childs[]" class="quantity-input input-number multi childs"
+                                       value="0" min="0" max="3" readonly="">
+
+                                <button type="button" class="quantity-btn quantity-right-plus btn-number-multi roomAge"
+                                        data-type="plus" data-field="childs">
+                                </button>
+                              </div>
+                            </div>
+                            <div class="clonediv"></div>
+                          </div>
+                          <div class="clone-room" id="clone-room-3">
+                            <p class="rooms" style="display: block;">Room - <span>3</span></p>
+
+                            <div class="numstepper small-btns">
+                              <p>Adults</p>
+                              <button type="button" class="quantity-btn quantity-left-minus btn-number-arr"
+                                      data-type="minus" data-field="adults">
+                              </button>
+                              <input type="text" name="adults[]" class="quantity-input input-number adults" value="1"
+                                     min="1" max="14" readonly="">
+                              <button type="button" class="quantity-btn quantity-right-plus btn-number-arr"
+                                      data-type="plus" data-field="adults">
+                              </button>
+                            </div>
+
+                            <div class="clone-item roomage">
+                              <input type="hidden" class="roomsno" value="3">
+                              <p style="display: none;">Child Age - <span>1</span></p>
+                              <div class="numstepper small-btns">
+                                <p>Children</p>
+                                <button type="button" class="quantity-btn quantity-left-minus btn-number-multi roomAge"
+                                        data-type="minus" data-field="childs">
+                                </button>
+                                <input type="text" name="childs[]" class="quantity-input input-number multi childs"
+                                       value="0" min="0" max="3" readonly="">
+
+                                <button type="button" class="quantity-btn quantity-right-plus btn-number-multi roomAge"
+                                        data-type="plus" data-field="childs">
+                                </button>
+                              </div>
+                            </div>
+                            <div class="clonediv"></div>
+                          </div>
+                          <div class="clone-room" id="clone-room-4">
+                            <p class="rooms" style="display: block;">Room - <span>4</span></p>
+
+                            <div class="numstepper small-btns">
+                              <p>Adults</p>
+                              <button type="button" class="quantity-btn quantity-left-minus btn-number-arr"
+                                      data-type="minus" data-field="adults">
+                              </button>
+                              <input type="text" name="adults[]" class="quantity-input input-number adults" value="1"
+                                     min="1" max="14" readonly="">
+                              <button type="button" class="quantity-btn quantity-right-plus btn-number-arr"
+                                      data-type="plus" data-field="adults">
+                              </button>
+                            </div>
+
+                            <div class="clone-item roomage">
+                              <input type="hidden" class="roomsno" value="4">
+                              <p style="display: none;">Child Age - <span>1</span></p>
+                              <div class="numstepper small-btns">
+                                <p>Children</p>
+                                <button type="button" class="quantity-btn quantity-left-minus btn-number-multi roomAge"
+                                        data-type="minus" data-field="childs">
+                                </button>
+                                <input type="text" name="childs[]" class="quantity-input input-number multi childs"
+                                       value="0" min="0" max="3" readonly="">
+
+                                <button type="button" class="quantity-btn quantity-right-plus btn-number-multi roomAge"
+                                        data-type="plus" data-field="childs">
+                                </button>
+                              </div>
+                            </div>
+                            <div class="clonediv"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <i class="fa fa-times" aria-hidden="true" (click)="this.hotelPopUpShow = false">OK</i>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-2">
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary btn-block searchbtn">Search</button>
+                    </div>
+                  </div>
+<!--                </div>-->
+
+                <div class="clearfix"></div>
+              </form>
+            </div>
+            <div class="tab-pane" id="daypass">
+              <form [formGroup]="dayPassFormGroup" id="villas-tab" class="tab-pane active" method="post">
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <label class="sr-only" for="villa_cityName">Destination</label>
+                    <input type="text" formControlName="city" name="cityName" class="form-control autocity" id="villa_cityName" placeholder="Enter a City or Airport" autocomplete="off" (click)="toggleDayPassAjaxForm()" pop-type="villas-tab" required="">
+                    <input type="hidden" name="cityid" class="cityid" id="villacityid">
+                  </div>
+                  <span class="active_ajax" style="display: none;"></span>
+                  <div class="ajax_dropdown" *ngIf="dayPassDropDownShow">
+                    <div class="ajax_dropdown_div" click-type="hotels-tab">
+                      <div class="title">Popular Cities</div>
+                      <div class="dropdown-div">
+                        <ul class="dropdown-list row2" id="daypass-ajax-result">
+                          <li class="num_21052" data-num="21052">
+                            <div class>
+                              <span class="name" data-val="21052" data-country="Jamaica">Kingston</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                  <div class="form-group">
+                    <label class="sr-only" for="dph1">From Date</label>
+<!--                    <input name="fromDate" formControlName="start_date" type="text" value="" class="form-control calendar autodate" placeholder="From" id="dpv1" autocomplete="off" required>-->
+                    <input type="date" formControlName="start_date" class="form-control">
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                  <div class="form-group">
+                    <label class="sr-only" for="dph2">To Date</label>
+<!--                    <input name="toDate" formControlName="end_date" type="text" value="" class="form-control calendar" placeholder="To" id="dpv2" autocomplete="off" required>-->
+                    <input type="date" fromControlName="end_date" class="form-control">
+                  </div>
+                </div>
+                <div class="col-sm-3 pax_drop">
+                  <div class="form-group" (click)="this.dayPassPopUpShow = true; ">
+                    <!-- <label for="">No of Guests</label> -->
+                    <span class="form-control c-round c-theme travellers-input" id="travellers-villa">
+                      <span class="bedroomsF travellers-input">1</span> bedrooms,
+                      <span class="bathroomsF travellers-input">1</span> bathrooms,
+                      <span class="guestsF travellers-input">1</span> guests
+                    </span>
+                  </div>
+                  <div class="travellers-input-popup" id="travellers-villa-popup" *ngIf="dayPassPopUpShow">
+                    <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+                    <div class="clearfix"></div>
+                    <div class="trip-options row no-padding">
+                      <div class="numstepper small-btns col-sm-4">
+                        <p>Bedrooms</p>
+                        <button type="button" class="quantity-btn quantity-left-minus btn-number-v" data-type="minus" data-field="bedrooms">
+                        </button>
+                        <input type="text" name="bedrooms" class="quantity-input input-number-v bedrooms" value="1" min="1" max="20">
+                        <button type="button" class="quantity-btn quantity-right-plus btn-number-v" data-type="plus" data-field="bedrooms">
+                        </button>
+                      </div>
+                      <div class="numstepper small-btns col-sm-4">
+                        <p>Bathrooms</p>
+                        <button type="button" class="quantity-btn quantity-left-minus btn-number-v" data-type="minus" data-field="bathrooms">
+                        </button>
+                        <input type="text" name="bathrooms" class="quantity-input input-number-v bathrooms" value="1" min="1" max="20">
+                        <button type="button" class="quantity-btn quantity-right-plus btn-number-v" data-type="plus" data-field="bathrooms">
+                        </button>
+                      </div>
+                      <div class="numstepper small-btns col-sm-4">
+                        <p>Guests</p>
+                        <button type="button" class="quantity-btn quantity-left-minus btn-number-v" data-type="minus" data-field="guests">
+                        </button>
+                        <input type="text" name="guests" class="quantity-input input-number-v guests" value="1" min="1" max="20">
+                        <button type="button" class="quantity-btn quantity-right-plus btn-number-v" data-type="plus" data-field="guests">
+                        </button>
+                      </div>
+                    </div>
+                    <i class="fa fa-times" aria-hidden="true" (click)="this.dayPassPopUpShow = false">OK</i>
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block searchbtn">Search</button>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+            <div class="tab-pane" id="tours">
+              <form [formGroup]="tourFormGroup" id="tours-tab" class="tab-pane" method="post">
+                <input type="hidden" value="1" name="holiday_type" id="holiday_type"/>
+                <div class="col-sm-10">
+                  <div class="form-group">
+                    <label class="sr-only" for="hol_cityName">Destination</label>
+                    <input type="text" formControlName="city" name="cityName" class="form-control autocity" id="hol_cityName" placeholder="Destination" autocomplete="off" (click)="toggleTourAjaxForm()" pop-type="tours-tab" required="">
+                    <input type="hidden" name="cityid" class="cityid" id="holicityid" />
+                  </div>
+                  <span class="active_ajax" style="display: none;"></span>
+                  <div class="ajax_dropdown" *ngIf="tourDropDownShow">
+                    <div class="ajax_dropdown_div" click-type="tours-tab">
+                      <div class="title">Popular Cities</div>
+                      <div class="dropdown-div">
+                        <ul class="dropdown-list row2" id="tour-ajax-result">
+                          <li class="num_1" data-num="1">
+                            <div class="">
+                              <span class="name" data-val="1" data-country="Jamaica">Montego Bay</span>
+                            </div>
+                          </li>
+                          <li class="num_2" data-num="2">
+                            <div class="">
+                              <span class="name" data-val="2" data-country="Jamaica">Negril</span>
+                            </div>
+                          </li>
+                          <li class="num_3" data-num="3">
+                            <div class="">
+                              <span class="name" data-val="3" data-country="Jamaica">Ocho Rios</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                  <div class="form-group">
+                    <button type="btn" class="btn btn-primary btn-block searchbtn">Search</button>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <br>
+                <div class="col-sm-3" style="padding-right: 8px;">
+                  <div class="form-group">
+                    <label class="sr-only" for="dpt1">From Date</label>
+<!--                    <input name="fromDate" formControlName="start_date" type="text" value="" class="form-control calendar autodate" placeholder="From" id="dpt1" autocomplete="off" required>-->
+                    <input type="date" formControlName="start_date" class="form-control">
+                  </div>
+                </div>
+                <div class="col-sm-3" style="padding-left: 8px;">
+                  <div class="form-group">
+                    <label class="sr-only" for="dpt2">To Date</label>
+<!--                    <input name="toDate" formControlName="end_date" type="text" value="" class="form-control calendar" placeholder="To"  id="dpt2" autocomplete="off" required>-->
+                    <input type="date" formControlName="end_date" class="form-control">
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="container">
+    <form [formGroup]="emailFormGroup" class="form-containers">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-lg-6">
+          <div style="font-size: 18px; font-weight: bold;margin-top: 5px;">
+            Sign up for email-only coupons, special offers and promotions
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-4">
+          <input type="text" formControlName="email" placeholder="Enter your email adress" class="form-control">
+        </div>
+        <div class="col-12 col-sm-12 col-lg-2">
+          <input type="submit" value="Send me deals" class="btn btn-outline-primary form-control">
+        </div>
+
+      </div>
+
+      <!-- <span class="gap"></span> -->
+
+      <!-- <span class="gap"></span> -->
+
+    </form>
+  </div>
+  <hr style="border-top: 3px solid black">
+  <div class="container">
+    <h3 style="color: #66859a;font-weight: 600;font-size: 16px;letter-spacing: 0.5px;margin-bottom: 5px;">Today's Popular Destinations</h3>
+    <div class="row">
+      <!-- <mdb-image-modal [modalImages]="images" type="margin"></mdb-image-modal> -->
+      <div class="col-12 col-sm-12 col-lg-4">
+        <div class="img-container bob">
+          <figure>
+            <img src="assets/images/promotion1.jpg"  style="width: 100%;">
+            <figcaption>
+              <h1 class="img-title">Negril</h1>
+              <p style="color: white; opacity: 0.8; font-size: 13px;">
+                Famous for its beautiful seven miles of white sand beach and turquiosie waters.
+                Enjoy a relaxing vacation with the family.
+              </p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-lg-4">
+        <div class="img-container bob">
+          <figure>
+            <img src="assets/images/promotion2.jpg"  style="width: 100%;">
+            <figcaption>
+              <h1 class="img-title">Montego Bay</h1>
+              <p style="color: white; opacity: 0.8; font-size: 13px;">
+                Jamaica's second city boast some of the best Hotels, Villas and thins to
+                do for a perfect vacation experience.
+              </p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-lg-4">
+        <div class="img-container bob">
+          <figure>
+            <img src="assets/images/promotion4.jpg"  style="width: 100%;">
+            <figcaption>
+              <h1 class="img-title">Ocho Rios</h1>
+              <p style="color: white; opacity: 0.8; font-size: 13px;">
+                The former fishing village boast some of the best Hotels, Villas and things
+                to do for a perfect vacation experience.
+              </p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </div>
+
+    <h3 style="color: #66859a;font-weight: 600;font-size: 16px;letter-spacing: 0.5px;margin-bottom: 5px;margin-top: 15px;">Special Offers</h3>
+    <div class="row">
+      <!-- <mdb-image-modal [modalImages]="images" type="margin"></mdb-image-modal> -->
+      <div class="col-12 col-lg-4">
+        <div class="img-container bob view">
+          <figure>
+            <div class="img-effect-flash">
+              <img src="assets/images/promotion1.jpg" class="img-fluid">
+            </div>
+          </figure>
+          <div class="text-container">
+            <h3 style="font-weight: bold;">Go! Deh Adventure Pass</h3>
+            <p>
+              The best way to experience Jamaica. Save up to 25% on tours and experience.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="img-container bob view">
+          <figure>
+            <div class="img-effect-flash">
+              <img src="assets/images/promotion2.jpg" class="img-fluid">
+            </div>
+          </figure>
+          <div class="text-container">
+            <p style="font-weight: bold;">Go! Deh Adventure Pass</p>
+            <p>
+              The best way to experience Jamaica. Save up to 25% on tours and experience.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="img-container bob view">
+          <figure>
+            <div class="img-effect-flash">
+              <img src="assets/images/promotion4.jpg" class="img-fluid">
+            </div>
+          </figure>
+          <div class="text-container">
+            <p style="font-weight: bold;">Go! Deh Adventure Pass</p>
+            <p>
+              The best way to experience Jamaica. Save up to 25% on tours and experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--</section>-->

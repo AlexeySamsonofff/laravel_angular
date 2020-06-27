@@ -1,0 +1,601 @@
+<div class="content white-container">
+    <section class="push-top-20">
+        <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form_wizard wizard_horizontal">
+                    <ul class="wizard_steps">
+                      <li class="active_step">
+                        <a href="javascript:;">
+                          <span class="step_no wizard-step">1</span>
+                          <span class="step_descr">Choose your rooms</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:;">
+                          <span class="step_no wizard-step">2</span>
+                          <span class="step_descr">Enter your details</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:;">
+                          <span class="step_no wizard-step">3</span>
+                          <span class="step_descr">Secure your booking</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </section>
+    <section id="hotel-details-section" class="push-top-20 hotel-details-section">
+        <div class="container" ng-repeat="hd in hoteldetails">
+
+            <!-- General -->
+            <div class="row no-padding">
+                <div class="col-md-6">
+                  <div class="hotel-details">
+                    <h3>{{hd.hotel_name}} <span class="star star{{hd.hotel_star_rating}}"></span></h3>
+                    <small><!--  <b></b> |  --><b>Location:</b>{{hd.hotel_city}} | <a href="javascript:;" class="maps ajax-tabs" data-id="map"><i class="fa fa-map-marker"></i> <u>View Map</u></a></small>
+                  </div>
+                  <div class="row2 ajax-tab-content ajax-content" style="display: none;">
+                    <div class="loaddiv" style="display: none;">
+                      <div class="row2" id="loading" style="text-align: center;padding: 30px 0;">
+                        <div id="loader" style="position: static;margin: auto;"></div>
+                      </div>
+                    </div>
+                    <div class="resultdiv"></div>
+                    <div class="mapdiv" style="display: none;">
+                      <iframe src="https://maps.google.com/maps?q=18.5227293,-77.8336971&amp;hl=es;z=14&amp;output=embed" width="100%" height="180" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="price-details">
+                    <a id="jump_rooms2" href="#htl-rooms" class="btn book-btn" type="submit">Choose a Room <span class="fa fa-caret-down"></span></a>
+                  </div>
+                  <div class="price-details promo_parent_div">
+                    <span class="min_promo" style="display:none"></span>
+                    <h2 class="price-tag">
+                      <small>
+                        <span class="pricespan" style="text-decoration: line-through;display: inline-block"><i class="fa fa-dollar" style="color: #999;font-size: 12px"></i><span class="minorgcost">695</span> from </span>
+                      </small>
+                      <i class="fa fa-dollar"></i>
+                      <span class="minprice">{{hotelcost}}</span>
+                      <small>USD</small>
+                      <small>Per Night</small>
+                    </h2>
+                  </div>
+                </div>
+            </div>
+
+            <div class="white-box row2 gallary-details">
+                <div class="row">
+                  <div class="container fixed-tab">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="ajax-tab text-left">
+                          <ul>
+                            <li><a href="#htl-rooms" class="active" >Rooms &amp; Rates</a></li>
+                            <li><a href="#htl-desc">Hotel Description</a></li>
+
+                            <li><a href="#htl-amenities">Amenities</a></li>
+                            <!-- <?php if(!empty($hotelDetails->child_policy)) { ?> -->
+                            <li><a href="#htl-policies">Child Policy</a></li>
+                            <!-- <?php }?> -->
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <!-- Gallery -->
+            <div class="hotel_gallery_ratting">
+                <div class="row">
+                  <div class="col-md-7">
+                    <div id="gallery-div" class="imgs-grid imgs-grid-7">
+                      <div class="imgs-grid-image">
+                        <div class="image-wrap">
+                          <img src="{{s3Url}}{{hd.thumb_img}} " alt="" title="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 right-sec">
+                    <div class="row2 promos push-top-20">
+                              <div>
+                            <div class="widSSPBranding"> <dl> <dt> <a target="_blank" href="https://www.tripadvisor.com"><img src="https://www.tripadvisor.com/img/cdsi/img2/branding/150_logo-11900-2.png" alt="TripAdvisor"></a> </dt> </dl> </div>
+                            <div class="hotels-hotel-review"> Reviews for </div>
+                            <div class="hotels-hotel-review-about-with-photos-Reviews__rating--2X_zZ">
+                                    <span class="hotels-hotel-review-about-with-photos-Reviews__overallRating--vElGA"></span>
+                                        <a href="" target="_blank" class="hotels-hotel-review-about-with-photos-Reviews__bubbleRating--GDW9V">
+                                            <div class="hotels-hotel-review-about-with-photos-Reviews__ratingLabel--24XY2">Excellent</div>
+                                            <span class="ui_bubble_rating bubble_"></span><br>
+                                            <span class="hotels-hotel-review-about-with-photos-Reviews__seeAllReviews--3PpLR"> reviews</span>
+                                        </a>
+                                </div>
+                                <div class="widSSPWrap widSSPOptional">
+                                <div class="widSSPInformation">
+                                    <div class="widSSPWrap">
+                                        <div class="widSSPPopIdx widSSPSingle"> <b>Tripadvisor Ranking</b> <br>
+                                            <span class="widSSPPopIdxData">
+                                                <span class="widSSPPopIdxData widSSPPopIdxNumbers"></span>
+                                            </span>
+                                            <p class="hotels-hotel-write-review"><a href="" target="_blank"> Write a Review</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                      <div style="display:none;">
+                          <h3><i class="fa fa-tag"></i> Promos Available</h3>
+                          <p>See <a id="jump_rooms2" class="blue-link" href="#htl-rooms"> <u>Room and Rates</u></a> for more details</p>
+                      </div>
+
+                    </div>
+                    <hr>
+                    <div class="row2 promos">
+                      <p><b>Featured Amenities <a id="jump_amenities2" class="blue-link" href="#htl-amenities"> <u>View More</u></a></b></p>
+                      <ul class="htl-amenities">
+                        <li><span class="fa fa-check"></span> Gym</li><li><span class="fa fa-check"></span> WiFi</li><li><span class="fa fa-check"></span> Free WiFi</li><li><span class="fa fa-check"></span> Outdoor Pool</li><li><span class="fa fa-check"></span> 24-Hour Front Desk</li>              </ul>
+                    </div>
+                  </div>
+                  </div>
+            </div>
+
+            <!-- Description -->
+            <div class="push-top-20 detail-content row2">
+                <div class="hotel_details_layout">
+                    <div class="no-padding">
+                        <div id="htl-desc" class="row2">
+                            <h3 class="accordions-heading">Hotel Description <span class="fa fa-angle-down pull-right"></span></h3>
+                            <div class="white-box accordions-content">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <!-- <div class="truncate-div" >
+                                           </div> -->
+                                        <div ng-bind-html="hd.hotel_desc"></div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="why-us">
+                                            <h5>Why Book with us?</h5>
+                                            <ul>
+                                            <li><i class="fa fa-check"></i>Experts on Jamaica</li>
+                                            <li><i class="fa fa-check"></i>Best Price Guarantee</li>
+                                            <li><i class="fa fa-check"></i>Best Hotels & Tours </li>
+                                            <li><i class="fa fa-check"></i>Free Vacation Planner </li>
+                                            <!-- <li><i class="fa fa-check"></i>Brand Jamaica</li> -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+            <!-- Room Details -->
+            <div id="htl-rooms" class="room-details row2">
+
+                <h3 class="accordions-heading">Rooms &amp; Rates <small>(<?php echo  $search_data['nights']; ?> nights: <?php echo $checkIn;?> - <?php echo $checkOut;?>) <a href="javascript:;" class="blue-link modifySearch">Change Dates</a></small><!--  <span class="fa fa-angle-down pull-right"></span> --></h3>
+                <div class="accordions-content">
+                  <div id="reservation-form" class="change-rooms" style="display: none;">
+                    <form action="<?php echo site_url().'hotels/hotelroomdetails/'.base64_encode($ses_id.'/'.$refNo.'/'.$searchId.'/'.$hotelDetails->hotel_code.'/'. base64_encode('hotel_crs')); ?>" class="tab-pane form-inline active"  method="post" name="reservationform">
+                     <input type="hidden" name="dmindays" id="dmindays" value="<?php echo $hotelDetails->minstay;?>">
+                     <input type="hidden" name="notify_enable" id="notify_enable" value="<?php echo $hotelDetails->last_minute_booking;?>">
+                      <div class="row no-padding">
+                        <div class="col-sm-2">
+                          <div class="form-group">
+                            <label for="dph5">Check-In</label>
+                            <input name="checkIn" type="text" value="<?php echo $checkIn;?>" class="form-control calendar autodate" placeholder="Check-In" id="dph5" autocomplete="off" readonly style="background: #fff;cursor: pointer;">
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="row no-padding">
+                            <div class="col-md-9">
+                              <div class="form-group">
+                                <label for="dph6">Check-Out</label>
+                                <input name="checkOut" type="text" value="<?php echo $checkOut;?>" class="form-control calendar autodate" placeholder="Check-Out"  id="dph6" autocomplete="off" readonly style="background: #fff;cursor: pointer;">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label class="invisible" id="datadiffnight" data-val="Night"> <?php echo  $search_data['nights']; ?> Night</label>
+                                <input name="night" id="datadiff" type="text" value="<?php echo  $search_data['nights']; ?> Night" class="form-control" autocomplete="off" style="background: transparent;border: none;box-shadow: none;cursor: default;padding: 0;margin: 0;text-align: center;" readonly="">
+                                <input type="hidden" name="results_id" value="<?php echo base64_encode($this->session->session_id.'/'.$newuniqueRefNo.'/'.''.'/'.$hotelDetails->hotel_code.'/'. base64_encode('hotel_crs').'/'.$city_code); ?>">
+                                <input type="hidden" name="nationality" value="<?php echo $nationality; ?>">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div class="col-sm-3">
+                          <div class="row no-padding">
+                            <div class="col-sm-4">
+                              <div class="form-group">
+                                <label for="rooms">Rooms</label>
+                                <select class="form-control" name="room_count" id="rooms">
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <div class="form-group">
+                                <label for="adult">Adult</label>
+                                <select class="form-control" name="adults[]" id="adult">
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <div class="form-group">
+                                <label for="child">Children</label>
+                                <select class="form-control" name="childs[]" id="child">
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div> -->
+                        <div class="col-md-3 col-sm-4 pax_drop">
+                          <div class="form-group">
+                            <label class="control-label pax_label">No of Guests</label>
+                            <span class="form-control c-round c-theme travellers-input" id="travellers-hotel" style="line-height: 24px;">
+                              <span class="adultsF travellers-input"><?php echo $adults_count ?></span> adult,
+                              <span class="childsF travellers-input"><?php echo $childs_count ?></span>  child,
+                              <span class="room_countF travellers-input"><?php echo $rooms ?></span>  room
+                            </span>
+                          </div>
+                          <div class="travellers-input-popup" id="travellers-hotel-popup">
+                            <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+                            <div class="trip-options">
+                              <p>Room - <span>1</span></p>
+                              <div class="numstepper small-btns">
+                                <button type="button" class="quantity-btn quantity-left-minus btn-number-rooms"  data-type="minus" data-field="room_count"></button>
+                                <input type="text" name="room_count" class="quantity-input input-number multi" value="<?php echo $rooms ?>" min="1" max="4">
+                                <button type="button" class="quantity-btn quantity-right-plus btn-number-rooms" data-type="plus" data-field="room_count"></button>
+                              </div>
+                              <div class="clone-room">
+                                <p class="rooms" style="display: none;">Room - <span>2</span></p>
+                                <div class="numstepper small-btns">
+                                  <p>Adults</p>
+                                  <button type="button" class="quantity-btn quantity-left-minus btn-number-arr" data-type="minus" data-field="adults">
+                                  </button>
+                                  <input type="text" name="adults[]" class="quantity-input input-number adults" value="<?php echo $adults ?>" min="1" max="14">
+                                  <button type="button" class="quantity-btn quantity-right-plus btn-number-arr" data-type="plus" data-field="adults">
+                                  </button>
+                                </div>
+                                <div class="clone-item roomage">
+                                  <input type="hidden" class="roomsno" value="1">
+                                  <p style="display: none;">Child Age - <span>1</span></p>
+                                  <div class="numstepper small-btns">
+                                    <p>Children</p>
+                                    <button type="button" class="quantity-btn quantity-left-minus btn-number-multi roomAge" data-type="minus" data-field="childs">
+                                    </button>
+                                    <input type="text" name="childs[]" class="quantity-input input-number multi childs" value="<?php echo $childs ?>" min="0" max="3">
+                                    <button type="button" class="quantity-btn quantity-right-plus btn-number-multi roomAge" data-type="plus" data-field="childs">
+                                    </button>
+                                  </div>
+                                </div>
+                                <div class="clonediv">
+                                  <?php if($search_data['childs'][0] > 0){ ?>
+                                  <?php $chAge = explode(',', $childs_ages[0]) ?>
+                                  <?php //echo '<pre>';print_r($chAge) ?>
+                                  <?php for($ch=0;$ch<count($chAge);$ch++){ ?>
+                                  <div class="clone-item roomage" id="clone-<?php echo $ch+1 ?>">
+                                    <input type="hidden" class="roomsno" value="1">
+                                    <p style="display: block;">Child Age - <span><?php echo $ch+1 ?></span></p>
+                                    <div class="numstepper small-btns">
+                                      <p style="display: none;">Children</p>
+                                      <button type="button" class="quantity-btn quantity-left-minus btn-number-arr2" data-type="minus" data-field="input-array">
+                                      </button>
+                                      <input type="text" name="childs_ages_room1[]" class="quantity-input input-number input-array" value="<?php echo $chAge[$ch] ?>" min="2" max="11" data-field="input-array">
+                                      <button type="button" class="quantity-btn quantity-right-plus btn-number-arr2" data-type="plus" data-field="input-array">
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <?php } ?>
+                                  <?php } ?>
+                                </div>
+                              </div>
+                              <div class="clonediv-room">
+                                <?php if($rooms > 1){ ?>
+                                <?php for($r=1;$r<$rooms;$r++){ ?>
+                                <div class="clone-room" id="clone-room-<?php echo $r+1 ?>">
+                                  <p class="rooms" style="display: block;">Room - <span><?php echo $r+1 ?></span></p>
+                                  <div class="numstepper small-btns">
+                                    <p>Adults</p>
+                                    <button type="button" class="quantity-btn quantity-left-minus btn-number-arr" data-type="minus" data-field="adults">
+                                    </button>
+                                    <input type="text" name="adults[]" class="quantity-input input-number adults" value="<?php echo $search_data['adults'][$r] ?>" min="1" max="3">
+                                    <button type="button" class="quantity-btn quantity-right-plus btn-number-arr" data-type="plus" data-field="adults">
+                                    </button>
+                                  </div>
+                                  <div class="clone-item roomage">
+                                    <input type="hidden" class="roomsno" value="<?php echo $r+1 ?>">
+                                    <p style="display: none;">Child Age - <span>1</span></p>
+                                    <div class="numstepper small-btns">
+                                      <p>Children</p>
+                                      <button type="button" class="quantity-btn quantity-left-minus btn-number-multi roomAge" data-type="minus" data-field="childs">
+                                      </button>
+                                      <input type="text" name="childs[]" class="quantity-input input-number multi childs" value="<?php echo $search_data['childs'][$r] ?>" min="0" max="3">
+                                      <button type="button" class="quantity-btn quantity-right-plus btn-number-multi roomAge" data-type="plus" data-field="childs">
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div class="clonediv">
+                                    <?php if($search_data['childs'][$r] > 0){ ?>
+                                    <?php $chAge2 = explode(',', $search_data['childs_ages'][$r]) ?>
+                                    <?php for($ch2=0;$ch2<count($chAge2);$ch2++){ ?>
+                                    <div class="clone-item roomage" id="clone-<?php echo $ch2+1 ?>">
+                                      <input type="hidden" class="roomsno" value="2">
+                                      <p style="display: block;">Child Age - <span><?php echo $ch2+1 ?></span></p>
+                                      <div class="numstepper small-btns">
+                                        <p style="display: none;">Children</p>
+                                        <button type="button" class="quantity-btn quantity-left-minus btn-number-arr2" data-type="minus" data-field="input-array">
+                                        </button>
+                                        <input type="text" name="childs_ages_room<?php echo $r+1 ?>[]" class="quantity-input input-number input-array" value="<?php echo $chAge2[$ch2] ?>" min="2" max="11" data-field="input-array">
+                                        <button type="button" class="quantity-btn quantity-right-plus btn-number-arr2" data-type="plus" data-field="input-array">
+                                        </button>
+                                      </div>
+                                    </div>
+                                    <?php } ?>
+                                    <?php } ?>
+                                  </div>
+                                </div>
+                                <?php } ?>
+                                <?php } ?>
+                              </div>
+                            </div>
+                             <i class="fa fa-times" aria-hidden="true">OK</i>
+                          </div>
+                        </div>
+                        <div class="col-sm-1">
+                          <div class="form-group">
+                            <label class="invisible" style="width: 100%">Update</label>
+                            <button class="btn btn-custom" id="dateUpdate">Update</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="rm-rates push-top-10">
+                    <h3>Available Rooms</h3>
+                    <div id="rooms_info">
+                        <roomdetails-controller></roomdetails-controller>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+
+
+            <!-- Amenities -->
+            <div class="row2">
+                <hr class="hr1"/>
+                <hr class="hr2"/>
+            </div>
+            <div id="htl-amenities" class="row2">
+                <h3 class="accordions-heading"><h3><b>Amenities</b></h3>
+                <div class="white-box accordions-content content">
+                  <div class="row">
+                    <div class="col-md-3">
+                        <h6 class="accordions-heading"><b>Parking & Transportation</b></h6>
+                        <div class="white-box accordions-content">
+                            <ul>
+                                <li>Free Parking</li>
+                                <li>On-site Parking</li>
+                                <li>Parking</li>
+                                <li>Private Parking</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h6><b>Pool & Wellness</b></h6>
+                        <div class="white-box accordions-content">
+                            <ul>
+                                <li>Outdoor Swimming Pool</li>
+                                <li>Fitness Center</li>
+                                <li>Spa</li>
+                                <li>Sauna</li>
+                                <li>Swimming Pool</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h6><b>Food & Drink</b></h6>
+                        <div class="white-box accordions-content">
+                            <ul>
+                                <li>Restaurant</li>
+                                <li>Room Service</li>
+                                <li>Bar</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h6><b>Facilities</b></h6>
+                        <div class="white-box accordions-content">
+                            <ul>
+                                <li>No Smoking Rooms/Facilities</li>
+                                <li>Family Rooms</li>
+                                <li>Terrace</li>
+                                <li>Air Conditioning</li>
+                            </ul>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                        <h6><b>Guest Services </b></h6>
+                        <ul>
+                          <li>24-hour Front Desk</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h6><b>Features</b></h6>
+                        <ul>
+                            <li>Beach Front</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h6><b>Activities & Entertainment</b></h6>
+                        <ul>
+                            <li>Private Beach Area</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h6><b>Media/Technology</b></h6>
+                        <ul>
+                            <li>Wifi</li>
+                            <li>Internet Services</li>
+                            <li>WiFi Available in all areas</li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="row2">
+                <hr class="hr1"/>
+                <hr class="hr2"/>
+            </div>
+            <!-- Highlights -->
+            <div id="htl-highlights" class="row2">
+                <h3 class="accordions-heading"><h4><b>Highlights</b></h4><span class="fa fa-angle-down pull-right"></span></h3>
+                <div class="white-box accordions-content contentcl">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div id="htl-terms" class="row2">
+                        <h3 class="accordions-heading"><b>Meal Plan Description</b><span class="fa fa-angle-down pull-right"></span></h3>
+                        <div class="white-box accordions-content">
+                          <div ng-bind-html="hd.meal_plan_desc"></div>
+                        </div>
+                      </div>
+
+                      <h5><b>Entertainment and family facilities </b></h5>
+                        <div ng-bind-html="hd.entertainment"></div>
+
+                      <!-- <h5><b>Language Spoken</b></h5>
+                        <div ng-bind="hd.language"></div>
+
+                      <h5><b>Internet </b></h5>
+                      <div ng-bind="hd.internet"></div> -->
+
+                    </div>
+                    <div class="col-md-4">
+                        <h5><b>Nearby things to do </b></h5>
+                        <div ng-bind-html="hd.nearby"></div>
+
+                        <h5><b>Pool and spa </b></h5>
+                        <div ng-bind-html="hd.pool"></div>
+
+
+                      <!-- <div id="htl-terms" class="row2">
+                        <h3 class="accordions-heading"><b>Important information</b><span class="fa fa-angle-down pull-right"></span></h3>
+                        <div class="white-box accordions-content">
+                          <div ng-bind="hd.imp_information"></div>
+                        </div>
+                      </div>
+
+
+                      <h5 style="font-size:15px"><b>Parking</b></h5>
+                        <div ng-bind="hd.hotel_parking_type"></div>
+                      <h5 style="font-size:15px"><b>Pets</b></h5>
+                        <div ng-bind="hd.pets_allow"></div>
+                      <h5 style="font-size:15px"><b>Transfer Available </b></h5>
+                        <div ng-bind="hd.transfers"></div>
+                      <h5 style="font-size:15px"><b>Fees </b></h5>
+                        <div ng-bind="hd.fees"></div>-->
+                    </div>
+                    <div class="col-md-4">
+                        <h5><b>Restaurants available or close by </b></h5>
+                        <div ng-bind="hd.close_by"></div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="row2">
+                <hr class="hr1"/>
+                <hr class="hr2"/>
+            </div>
+            <!-- Policies -->
+            <div id="htl-policies" class="row2">
+                <h3 class="accordions-heading"><h4><b>Policies</b></h4><span class="fa fa-angle-down pull-right"></span></h3>
+                <div class="white-box accordions-content contentcl">
+                  <div class="row">
+                    <div class="col-md-6">
+
+                        <div style="width: 340px;">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <h5 style="font-size:15px">Check-in</h5>
+                                <div ng-bind="hd.check_in" class="outlinegrey"></div>
+                              </div>
+                              <div class="col-md-6">
+                                <h5 style="font-size:15px">Check-out</h5>
+                                <div ng-bind="hd.check_out" class="outlinegrey"></div>
+                              </div>
+                            </div>
+                        </div>
+
+                        <h5 style="font-size:15px"><b>Pets</b></h5>
+                        <div ng-bind="hd.pets_allow"></div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <h5><b>Language Spoken</b></h5>
+                        <div ng-bind="hd.language"></div>
+
+                        <div id="htl-terms" class="row2">
+
+                        </div>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
+            <div class="row2">
+                <hr class="hr1"/>
+                <hr class="hr2"/>
+            </div>
+            <!-- Important Info -->
+            <div id="htl-info" class="row2">
+                <h3 class="accordions-heading"><h4><b>Important info</b></h4><span class="fa fa-angle-down pull-right"></span></h3>
+                <div class="white-box accordions-content contentcl">
+                  <div class="row">
+                    <div class="col-md-12">
+                         <div id="htl-terms" class="row2">
+                            <div class="white-box accordions-content">
+                                <div ng-bind-html="hd.imp_information"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
+
+             <!-- Child Policy -->
+             <!-- <div id="htl-child_policy" class="row2">
+                <h3 class="accordions-heading">Child Policy<span class="fa fa-angle-down pull-right"></span></h3>
+                <div class="white-box accordions-content">
+                    {{hd.child_policy}}
+                </div>
+            </div> -->
+        </div>
+
+
+    </section>

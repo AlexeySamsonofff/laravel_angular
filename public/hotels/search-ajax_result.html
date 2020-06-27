@@ -1,0 +1,318 @@
+<section id="" class="push-top-20">
+    <div class="container">
+    <div class="white-container push-bottom-20">
+        <div class="row">
+
+        <div class="col-sm-12">
+            <div class="row change-search">
+                <div class="col-md-3 col-sm-4"><i class="fa fa-map-marker"></i> {{citySearch}}</div>
+                <div class="col-md-2 col-sm-3"><i class="fa fa-calendar"></i> {{checkIn}} - {{checkOut}}</div>
+                <div class="col-md-2 col-sm-3"><i class="fa fa-briefcase"></i> {{myservice.roomcount}} Room, {{myservice.guestcount}} Guests</div>
+                <div class="col-md-5 col-sm-2 text-right" id="change-search"><a href="javascript:;">Change Search  <i class="fa fa-search"></i></a></div>
+              </div>
+
+
+            <div class="row2" id="modify-search" style="display: block;">
+            <form id="hotels-tab" class="search-area no-padding modify-search" action="<?php //echo site_url(); ?>hotels/results" method="post">
+                <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="sr-only" for="destination2">Destination</label>
+                    <!-- <input type="text" name="cityName" ng-model="cityName"  class="form-control autocity" id="destination2" placeholder="Enter a City or Airport" autocomplete="off" onclick="this.select();" pop-type="hotels-tab" required>
+                    <input type="hidden" name="cityid" class="cityid" id="hotelcityid" ng-value="cityid"> -->
+                    <input type="text" name="city_name"  class="form-control autocity ui-autocomplete-input" id="city_name" ng-model="citySearch" placeholder="Enter a City or Airport" ng-keyup="searchcity()" >
+                </div>
+                <span class="active_ajax" style="display: none;"></span>
+                <div class="ajax_dropdown"></div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                    <label class="sr-only" for="dph1">Check-In</label>
+                    <input name="checkIn" type="text" readonly class="form-control calendar autodate" placeholder="Check-in" id="dph1" autocomplete="off" required="" ng-model="checkIn" data-provide="datepicker">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                    <label class="sr-only" for="dph2">Check-Out</label>
+                    <input name="checkOut" type="text" readonly class="form-control calendar" placeholder="Check-out" id="dph2" autocomplete="off" required="" ng-model="checkOut" data-provide="datepicker">
+                    </div>
+                </div>
+                <div class="col-sm-3 pax_drop">
+                <div class="form-group">
+                    <span class="form-control c-round c-theme travellers-input" id="travellers-hotel">
+                    <span class="adultsF travellers-input"></span> adult,
+                    <span class="childsF travellers-input"></span> child,
+                    <span class="room_countF travellers-input"></span> room
+                    </span>
+                </div>
+                <div class="travellers-input-popup" id="travellers-hotel-popup">
+                    <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+                    <!-- <label>Occupancy</label> -->
+                    <div class="trip-options">
+                      <p>Room - <span>1</span></p>
+                      <div class="numstepper small-btns">
+                        <button type="button" class="quantity-btn quantity-left-minus btn-number-rooms"  data-type="minus" data-field="room_count"></button>
+                        <input type="text" name="room_count" class="quantity-input input-number multi" value="1" min="1" max="4">
+                        <button type="button" class="quantity-btn quantity-right-plus btn-number-rooms" data-type="plus" data-field="room_count"></button>
+                      </div>
+                      <div class="clone-room">
+                        <p class="rooms" style="display: none;">Room - <span>2</span></p>
+
+                        <div class="numstepper small-btns">
+                          <p>Adults</p>
+                          <button type="button" class="quantity-btn quantity-left-minus btn-number-arr" data-type="minus" data-field="adults">
+                          </button>
+                          <input type="text" name="adults[]" class="quantity-input input-number adults" value="1" min="1" max="14">
+                          <button type="button" class="quantity-btn quantity-right-plus btn-number-arr" data-type="plus" data-field="adults">
+                          </button>
+                        </div>
+
+                        <div class="clone-item roomage">
+                          <input type="hidden" class="roomsno" value="1">
+                          <p style="display: none;">Child Age - <span>1</span></p>
+                          <div class="numstepper small-btns">
+                            <p>Children</p>
+                            <button type="button" class="quantity-btn quantity-left-minus btn-number-multi roomAge" data-type="minus" data-field="childs">
+                            </button>
+                            <input type="text" name="childs[]" class="quantity-input input-number multi childs" value="0" min="0" max="3">
+
+                            <button type="button" class="quantity-btn quantity-right-plus btn-number-multi roomAge" data-type="plus" data-field="childs">
+                            </button>
+                          </div>
+                        </div>
+                        <div class="clonediv"></div>
+                      </div>
+                      <div class="clonediv-room"></div>
+                    </div>
+                    <i class="fa fa-times" aria-hidden="true">OK</i>
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-block searchbtn" ng-click="modifyButton()">Modify</button>
+                </div>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+            </div>
+        </div>
+        </div>
+        <div class="row push-top-20" >
+        <div class="flightResultsSection">
+                <div class="visible-xs visible-sm filter-button"><i class="fa fa-filter"></i></div>
+                <div class="col-md-3">
+                        <div class="row2 left-filter searchFiltersSection">
+                            <div class="accordion-area row2">
+                                <!-- <h3>Filter your Search <span>Reset All</span></h3> -->
+                                <div id="mapiframe"></div>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25778.88844710089!2d-115.1780026!3d36.1334212!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c3f7c07ce98b%3A0x9ba92e2a846953c1!2sPalace+Station+Hotel+%26+Casino!5e0!3m2!1sen!2sin!4v1517807156952" height="250" style="width:100%" frameborder="0" style="border:0;margin-bottom: 10px" allowfullscreen></iframe>
+                                <h5 class='accordion-heading'><span class="fa fa-angle-down"></span> Hotel Filters</h5>
+                                <div class='accordion-content'>
+                                    <div class="input-group">
+                                    <textarea class="form-control" name="hotelName" id="hotelName" ng-model="hotelName" class="form-control transparent-input" placeholder="Hotel Name" rows="1" style="    resize: none;height: 34px;line-height: 33px;overflow: hidden;padding: 0 10px;box-shadow: none;"></textarea>
+                                    <span class="input-group-btn" style="background: #ff7802;border-top-right-radius: 4px;border-bottom-right-radius: 4px;">
+                                        <button class="btn btn-primary hotelNameSearch" type="button" style="border-color: #ff7802;background: #ff7802" >Go</button>
+                                    </span>
+                                    </div>
+                                </div>
+                                <!-- slider -->
+                                <div range-slider model-min="1" model-max="100"></div>
+                                <h5 class='accordion-heading'><span class="fa fa-angle-down"></span> Set Budget Per Night</h5>
+                                <div class='accordion-content'>
+                                        <input type="hidden" name="minPrice" id="minPrice" ng-value="minPrice">
+                                        <input type="hidden" name="maxPrice" id="maxPrice" ng-value="maxPrice">
+                                        <input type="hidden" name="priceFilter" id="priceFilter" ng-value="priceFilter">
+                                    <div class="row2" style="margin-bottom: 5px;">
+                                    <span type="text" class="range-value" id="price-start" name="price-start" style="float: left;">USD 100</span>
+                                    <span type="text" class="range-value range-value-end" name="price-end" id="price-end" style="float: right;">USD 3000</span>
+                                    </div>
+
+                                    <div id="priceSlider" name="priceSlider" ng-model="priceSlider" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" ng-click="pricesliderevent()">
+                                        <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span>
+                                        <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 100%;"></span>
+                                    </div>
+                                </div>
+                        <h5 class='accordion-heading'><span class="fa fa-angle-down"></span> Star Rating</h5>
+                        <div class='accordion-content'>
+                            <input type="hidden" name="starRate" id="starRate" ng-value="starRate">
+                            <ul class="star-filter">
+                            <li class="StarRatingLi">
+                                <label>
+                                <small>1</small>
+                                <span class="fa fa-star"></span>
+                                <input type="checkbox" class="StarRating" name="star" value="1" ng-model="confirmed1" ng-change="filterByStar('1')">
+                                </label>
+                            </li>
+                            <li class="StarRatingLi">
+                                <label>
+                                <small>2</small>
+                                <span class="fa fa-star"></span>
+                                <input type="checkbox" class="StarRating" name="star" value="2" ng-model="confirmed2" ng-change="filterByStar('2')">
+                                </label>
+                            </li>
+                            <li class="StarRatingLi">
+                                <label>
+                                <small>3</small>
+                                <span class="fa fa-star"></span>
+                                <input type="checkbox" class="StarRating" name="star" value="3" ng-model="confirmed3" ng-change="filterByStar('3')">
+                                </label>
+                            </li>
+                            <li class="StarRatingLi">
+                                <label>
+                                <small>4</small>
+                                <span class="fa fa-star"></span>
+                                <input type="checkbox" class="StarRating" name="star" value="4" ng-model="confirmed4" ng-change="filterByStar('4')">
+                                </label>
+                            </li>
+                            <li class="StarRatingLi">
+                                <label>
+                                <small>5</small>
+                                <span class="fa fa-star"></span>
+                                <input type="checkbox" class="StarRating" name="star" value="5" ng-model="confirmed5" ng-change="filterByStar('5')">
+                                </label>
+                            </li>
+                            </ul>
+                        </div>
+                        <h5 class='accordion-heading'><span class="fa fa-angle-down"></span> Amenities</h5>
+                        <div class='accordion-content'>
+                            <div ng-repeat= "amenity in amenities">
+                                <label class="checkbox-custom checkbox-custom-sm">
+                                <input name="customradio" type="checkbox" class="Amenities" ><i></i><span>{{ amenity.facility }}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="sort-result row2">
+                        <ul class="sort_type">
+                        <li>
+                        <select class="form-control HotelSorting" name="HotelSorting" ng-init="SortColumn='hotel_name'" ng-model="SortColumn">
+                            <option value="hotel_name">Sort by Name(a-z)</option>
+                            <option value="-hotel_name">Sort by Name(z-a)</option>
+                            <option value="orgamt" >Sort by Price(Lowest)</option>
+                            <option value="-orgamt">Sort by Price(Highest)</option>
+                        </select>
+                        </li>
+                        </ul>
+                        <ul class="view_type">
+                            <li class="ListMapView"><a data-val="List" href="javascript:;" title="List View" class="active" ><i class="fa fa-th-list"></i> List</a></li>
+                            <li class="ListMapView"><a data-val="Grid" href="javascript:;" title="Grid View"><i class="fa fa-th"></i> Grid</a></li>
+                            <li class="ListMapView"><a data-val="Map" href="javascript:;" title="Map View"><i class="fa fa-map-marker"></i> Map</a></li>
+                        </ul>
+                    </div>
+                    <div class="row2 result-area mainlistcontainerdiv" id="rapid_fire_draft_loading">
+                        <!-- <blackresult-controller></blackresult-controller> -->
+                    </div>
+                    <div class="row2 result-area mainlistcontainerdiv" id="show_result">
+                        <div class="row2"  ng-controller="hotelsController">
+                            <div class="row blank_result" id="list-view">
+                                <div class="result-box hotel-box blank_result" ng-repeat="hotel in hotels | filter: {hotel_name: hotelName} | filter:starRate | filter:priceFilter | orderBy :SortColumn">
+                                    <div class="row blank_result">
+                                        <div class="col-sm-4 left-section">
+                                            <div class="htl-img">
+                                                <img src="{{s3Url}}{{hotel.image}}" alt="{{hotel.image}}" class="img-responsive" style="width:257px; height:230px;">
+                                                <!-- <ul style="float:left; position:relative;z-index:100;" >
+                                                    <li style="float:left; position:relative;list-style: none;" > -->
+                                                <div  style="float: left; position: relative; z-index: 100; margin-top:-15;">
+                                                        <img ng-repeat="n in rangevalue | limitTo:hotel.star" src="../img/whitestar.png" style="margin-top:-40px;width:30px;height:auto;">
+                                                </div>
+                                                    <!-- </li></ul> -->
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8 right-section">
+                                            <div class="col-sm-9">
+                                                <div class="result-details text-left">
+                                                    <h3>{{hotel.hotel_name}}</h3>
+                                                    <small>{{ hotel.hotel_address }}|
+                                                        <!-- <a><u>Map</u></a> -->
+                                                        <a href="javascript:;" class="maps ajax-tabs searchAjaxData active" data-val="ODgxNjIyODA5ZjA0MjNlYWM2YmVmNjlkM2VkZDNlNWQ3MDhkMDQ4ZS9WTU40OUNEVkpFNjVVLzM4ODU3OS8wMDAwMTAwMDU4L2FHOTBaV3hmWTNKei8yMTA1Nw==" data-type="maps" data-id="maps" ng-click="showmap(hotel.hotel_code,hotel.latitude,hotel.longitude)"><u>Map</u></a>
+                                                    </small>
+                                                    <div class="resultdiv ajax-tab-content ajax-content" id="{{ 'map'+ hotel.hotel_code }}" style="display: none; position: relative;"></div>
+                                                </div>
+                                                <input type="hidden" id="maphid">
+                                                <div class="text-left push-top-10 read-more-div form-label" style="height:40;overflow: hidden;" id="{{hotel.hotel_code}}" ng-bind-html="hotel.description" >
+
+                                                </div>
+                                                <p class="read-more-item" ng-click="showdescription(hotel.hotel_code)" id="read{{hotel.hotel_code}}">Read More</p>
+                                                <div class="inclusions text-left pull-left" ng-init="hotelamenities(hotel.amenities,hotel.hotel_code)" >
+                                                    <div id="amenty{{ hotel.hotel_code }}"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 pull-right">
+                                                <div class="text-right">
+                                                    <!--Any offer Div-->
+
+                                                </div>
+                                                <div class="text-right">
+                                                    <h3 class="price-tag" style="font-weight: bold; margin-bottom:0;">{{'$ '+hotel.orgamt+' '+hotel.xml_currency}}</h3>
+                                                    <small class="pernight" style="padding-top:-30px;">per night</small>
+
+                                                </div>
+                                                <input type="hidden" value="{{hotel.orgamt}}" id="hotelcost{{hotel.hotel_id}}">
+                                                <p>&nbsp;</p>
+                                                <div class="form-group pull-right" style="margin-bottom: 0;">
+                                                    <button type="button" class="btn btn-primary" style="border-radius: 8px;" ng-click="hotelDetail(hotel.hotel_id)">Reserve</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-view blank_result" id="grid-view" style="display:none;">
+                                <div class="result-box hotel-box blank_result col-lg-5 " style="margin-left:0;padding-left:0px;padding-right:0px;width:49%;" ng-repeat="hotel in hotels | filter: {hotel_name: hotelName} | filter:starRate | filter:priceFilter | orderBy :SortColumn">
+                                        <div class="row">
+                                            <img  src="{{s3Url}}{{hotel.image}}" alt="{{hotel.image}}" class="img-responsive col-sm-12">
+                                            <div  style="float: right; position: relative; z-index: 100; margin-top:-15;padding-right:20;">
+                                                <img ng-repeat="n in rangevalue | limitTo:hotel.star" src="../img/whitestar.png" style="margin-top:-40px;width:30px;height:auto;">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-10" style="padding:10; margin-left: 10;">
+                                            <div class="row">
+                                                <div class="result-details text-left" style="padding-top: 20;">
+                                                    <h3>{{ hotel.hotel_name }}</h3>
+                                                    <small>{{ hotel.hotel_address }}|
+                                                        <a href="javascript:;" class="maps ajax-tabs searchAjaxData active" data-val="ODgxNjIyODA5ZjA0MjNlYWM2YmVmNjlkM2VkZDNlNWQ3MDhkMDQ4ZS9WTU40OUNEVkpFNjVVLzM4ODU3OS8wMDAwMTAwMDU4L2FHOTBaV3hmWTNKei8yMTA1Nw==" data-type="maps" data-id="maps" ng-click="showmap(hotel.hotel_code,hotel.latitude,hotel.longitude)"><u>Map</u></a>
+                                                    </small>
+                                                    <div class="resultdiv ajax-tab-content ajax-content" id="{{ 'gridmap'+ hotel.hotel_code }}" style="display: none; position: relative;"></div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" id="gridmaphid">
+                                            <div class="row">
+                                                <div class="text-left push-top-10 read-more-div form-label" style="height:40;overflow: hidden;" id="grid{{hotel.hotel_code}}" ng-bind-html="hotel.description">
+
+                                                </div>
+                                                <p class="read-more-item" ng-click="showdescription(hotel.hotel_code)" id="readgrid{{hotel.hotel_code}}">Read More</p>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding: 10;">
+                                            <div class="col-sm-10">
+                                                <h3 class="price-tag" style="font-weight: bold; margin-bottom: 0;">${{hotel.orgamt}} {{hotel.xml_currency}}</h3>
+                                                <small class="pernight" style="padding-top:-30px;">per night</small>
+                                            </div>
+                                            <div class="col-sm-2" style="margin-top: 20;">
+                                                <div class="pull-right" style="margin-bottom: 0;margin-top: 0;">
+                                                    <button type="button" class="btn btn-primary" style="border-radius: 8px;" ng-click="hotelDetail()">Reserve</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+        </div>
+        </div>
+    <div>
+                    <input type="hidden" id="setMinPrice" value="0">
+                    <input type="hidden" id="setMaxPrice" value="0">
+                    <!--<input type="hidden" id="setMinRating" value="1" />
+                    <input type="hidden" id="setMaxRating" value="5" />-->
+                    <input type="hidden" id="setCurrency" value="USD">
+    </div>
+</section>
+
+
+
+
+

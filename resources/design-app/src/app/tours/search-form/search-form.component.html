@@ -1,0 +1,58 @@
+<mat-accordion>
+  <mat-expansion-panel hideToggle="true" style="background: white;box-shadow: none;">
+    <mat-expansion-panel-header>
+      <!-- <mat-panel-title>
+        <i class="fa fa-map-marker icon"></i>negril jamaica
+      </mat-panel-title> -->
+      <mat-panel-description>
+        <div class="row">
+          <div class="col-sm-4 col-md-3">
+            <i class="fa fa-map-marker icon"></i>negril jamaica
+          </div>
+          <div class="col-sm-4 col-md-5">
+            <i class="fa fa-calendar icon"></i>Tue, 16 Jun - Fri, 19 Jun
+          </div>
+          <div class="col-sm-4 col-md-4 text-right" style="color: rgb(1, 124, 184);">
+            Change Search
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+        
+        
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="container">
+      <form [formGroup]="searchFormGroup" style="background: #0a85c0;padding: 10px;padding-bottom: 0;">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <input type="text" formControlName="city" class="form-control" placeholder="Enter your city" required="">
+            </div>
+            
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <input type="date" formControlName="date_start" class="form-control calendar" required="">
+            </div>
+            
+          </div>
+          <div class="col-md-3">
+            <input type="date" formControlName="date_end" class="form-control calendar" placeholder="Enter your city" required="">
+          </div>
+          <div class="col-md-2">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary" style="background-color: #ff7802;color:white">Modify</button>
+            </span>
+          </div>
+
+        </div>
+        
+        
+        
+        
+      </form>
+    </div>
+
+    
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,689 @@
+<div class="content">
+<section class="push-top-20">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form_wizard wizard_horizontal">
+            <ul class="wizard_steps">
+              <li class="active_step">
+                <a href="javascript:;">
+                  <span class="step_no wizard-step"><i class="fa fa-check"></i></span>
+                  <span class="step_descr">Choose your rooms</span>
+                </a>
+              </li>
+              <li class="active_step">
+                <a href="javascript:;">
+                  <span class="step_no wizard-step">2</span>
+
+                  <span class="step_descr">Enter your details</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <span class="step_no wizard-step">3</span>
+                  <span class="step_descr">Secure your booking</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section id="hotel-book-section" class="push-top-20 hotel-book-section" ng-repeat="hd in hoteldetails">
+    <div class="container">
+      <div class="row small-padding">
+        <div class="col-md-8">
+          <form method="POST" action="https://www.vacaymenow.com/hotels/reservation?callBackId=&amp;hotelCode=&amp;searchId=&amp;sessionId=&amp;refNo=" data-parsley-validate="" id="continueform" novalidate="">
+
+
+            <div class="box-shadow" style="display:none">
+              <div class="bdTitle2 one"><span>1</span> <b>Room Availability Confirmation <i class="fa fa-check"></i></b></div>
+              <div class="itinerary-container middle-container">
+                <div class="white-container">
+
+                  <div class="call_reserve">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h2 class="heading" style="">Rooms at this property are booking fast!</h2>
+                         <p class="sub_head" style="">To ensure the best experience please confirm room availability for the dates you have requested before booking</p>
+                      </div>
+                      <div class="col-md-12 col-sm-12  button_cobtainer">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6 phone-bt">
+                          <a href="tel:13022124246" class="btn-phone">
+                                <img src="https://www.vacaymenow.com/public/icon/phone.png"> <span>Click to call </span>
+                          </a>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 chet-bt">
+                          <a href="javascript:void(0);" onclick="tidioChatApi.open()" class="btn-chat">
+                          <img src="https://www.vacaymenow.com/public/icon/chat.png">  <span> Chat now</span> </a>
+                        </div>
+                      </div>
+                      </div>
+                      <div class="col-md-12">
+                        <h3 class="heading2">Get <span style="color: #eb5f2e;">$100USD</span> instant tour credit plus other resort credit when you book with us</h3>
+                        <h3 class="ex_heading2">Enjoy Dolphin Swim, Zip Line, ATV Advnture,Spa Treatment</h3>
+                        <div style="text-align: left; margin-top: -10px;">
+                          <div class="extra_content" id="extra_content">
+                            <p style="margin-bottom: 10px; color: rgb(51, 51, 51); font-family: " helvetica="" neue",="" helvetica,="" arial,="" sans-serif;"=""><br></p>                          </div>
+                         <!-- <a href="javascript:void(0);" id="ex_more_less">+more for less!</a> -->
+                       </div>
+                        <p style="font-size: 12px; text-align:left;">Term and conditions apply*</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-shadow" ng-controller="personaldetailController">
+              <div class="bdTitle2 one"><span>1</span> <b>Your Information <i class="fa fa-check"></i></b></div>
+              <div class="itinerary-container middle-container">
+                <div class="white-container">
+                  <div class="row form-group no-padding">
+                    <div class="col-sm-6">
+                      <label>First name</label>
+                      <input type="text" name="GuestFirstName" class="form-control" data-parsley-nametest="" required="" ng-model="user.firstname">
+                    </div>
+                    <div class="col-sm-6">
+                      <label>Last name</label>
+                      <input type="text" name="GuestLastName" class="form-control" data-parsley-nametest="" required="" ng-model="user.lastname">
+                    </div>
+                  </div>
+                  <div class="row form-group no-padding">
+                    <div class="col-sm-12">
+                      <label>Billing Address</label>
+                      <input type="text" name="GuestAddress" class="form-control" required="" ng-model="user.billing_address">
+                    </div>
+                  </div>
+                  <div class="row form-group no-padding">
+                    <div class="col-sm-6">
+                      <label>Zip/Postal Code</label>
+                      <input type="text" name="GuestPostalCode" class="form-control" required="" ng-model="user.postalcode">
+                    </div>
+                  </div>
+                  <div class="row form-group no-padding">
+                    <div class="col-sm-6">
+                      <label>Country</label>
+                      <select class="form-control" name="GuestCountryCode" required="" ng-model="user.country">
+                        <option value="">Select Country</option>
+                                                <option value="Afghanistan">Afghanistan</option>
+                                                <option value="Aland Islands">Aland Islands</option>
+                                                <option value="Albania">Albania</option>
+                                                <option value="Algeria">Algeria</option>
+                                                <option value="American Samoa">American Samoa</option>
+                                                <option value="Andorra">Andorra</option>
+                                                <option value="Angola">Angola</option>
+                                                <option value="Anguilla">Anguilla</option>
+                                                <option value="Antarctica">Antarctica</option>
+                                                <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                                <option value="Argentina">Argentina</option>
+                                                <option value="Armenia">Armenia</option>
+                                                <option value="Aruba">Aruba</option>
+                                                <option value="Australia">Australia</option>
+                                                <option value="Austria">Austria</option>
+                                                <option value="Azerbaijan">Azerbaijan</option>
+                                                <option value="Bahamas">Bahamas</option>
+                                                <option value="Bahrain">Bahrain</option>
+                                                <option value="Bangladesh">Bangladesh</option>
+                                                <option value="Barbados">Barbados</option>
+                                                <option value="Belarus">Belarus</option>
+                                                <option value="Belgium">Belgium</option>
+                                                <option value="Belize">Belize</option>
+                                                <option value="Benin">Benin</option>
+                                                <option value="Bermuda">Bermuda</option>
+                                                <option value="Bhutan">Bhutan</option>
+                                                <option value="Bolivia, Plurinational State of">Bolivia, Plurinational State of</option>
+                                                <option value="Bonaire, Saint Eustatius and Saba">Bonaire, Saint Eustatius and Saba</option>
+                                                <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                                                <option value="Botswana">Botswana</option>
+                                                <option value="Bouvet Island">Bouvet Island</option>
+                                                <option value="Brazil">Brazil</option>
+                                                <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                                <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                                <option value="Bulgaria">Bulgaria</option>
+                                                <option value="Burkina Faso">Burkina Faso</option>
+                                                <option value="Burundi">Burundi</option>
+                                                <option value="Cambodia">Cambodia</option>
+                                                <option value="Cameroon">Cameroon</option>
+                                                <option value="Canada">Canada</option>
+                                                <option value="Cape Verde">Cape Verde</option>
+                                                <option value="Cayman Islands">Cayman Islands</option>
+                                                <option value="Central African Republic">Central African Republic</option>
+                                                <option value="Chad">Chad</option>
+                                                <option value="Chile">Chile</option>
+                                                <option value="China">China</option>
+                                                <option value="Christmas Island">Christmas Island</option>
+                                                <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                                                <option value="Colombia">Colombia</option>
+                                                <option value="Comoros">Comoros</option>
+                                                <option value="Congo">Congo</option>
+                                                <option value="Congo, the Democratic Republic of the">Congo, the Democratic Republic of the</option>
+                                                <option value="Cook Islands">Cook Islands</option>
+                                                <option value="Costa Rica">Costa Rica</option>
+                                                <option value="Cote D'Ivoire">Cote D'Ivoire</option>
+                                                <option value="Croatia">Croatia</option>
+                                                <option value="Cuba">Cuba</option>
+                                                <option value="Curacao">Curacao</option>
+                                                <option value="Cyprus">Cyprus</option>
+                                                <option value="Czech Republic">Czech Republic</option>
+                                                <option value="Denmark">Denmark</option>
+                                                <option value="Djibouti">Djibouti</option>
+                                                <option value="Dominica">Dominica</option>
+                                                <option value="Dominican Republic">Dominican Republic</option>
+                                                <option value="Ecuador">Ecuador</option>
+                                                <option value="Egypt">Egypt</option>
+                                                <option value="El Salvador">El Salvador</option>
+                                                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                                <option value="Eritrea">Eritrea</option>
+                                                <option value="Estonia">Estonia</option>
+                                                <option value="Ethiopia">Ethiopia</option>
+                                                <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                                                <option value="Faroe Islands">Faroe Islands</option>
+                                                <option value="Fiji">Fiji</option>
+                                                <option value="Finland">Finland</option>
+                                                <option value="France">France</option>
+                                                <option value="French Guiana">French Guiana</option>
+                                                <option value="French Polynesia">French Polynesia</option>
+                                                <option value="French Southern Territories">French Southern Territories</option>
+                                                <option value="Gabon">Gabon</option>
+                                                <option value="Gambia">Gambia</option>
+                                                <option value="Georgia">Georgia</option>
+                                                <option value="Germany">Germany</option>
+                                                <option value="Ghana">Ghana</option>
+                                                <option value="Gibraltar">Gibraltar</option>
+                                                <option value="Greece">Greece</option>
+                                                <option value="Greenland">Greenland</option>
+                                                <option value="Grenada">Grenada</option>
+                                                <option value="Guadeloupe">Guadeloupe</option>
+                                                <option value="Guam">Guam</option>
+                                                <option value="Guatemala">Guatemala</option>
+                                                <option value="Guernsey">Guernsey</option>
+                                                <option value="Guinea">Guinea</option>
+                                                <option value="Guinea-Bissau">Guinea-Bissau</option>
+                                                <option value="Guyana">Guyana</option>
+                                                <option value="Haiti">Haiti</option>
+                                                <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+                                                <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                                                <option value="Honduras">Honduras</option>
+                                                <option value="Hong Kong">Hong Kong</option>
+                                                <option value="Hungary">Hungary</option>
+                                                <option value="Iceland">Iceland</option>
+                                                <option value="India">India</option>
+                                                <option value="Indonesia">Indonesia</option>
+                                                <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                                                <option value="Iraq">Iraq</option>
+                                                <option value="Ireland">Ireland</option>
+                                                <option value="Isle of Man">Isle of Man</option>
+                                                <option value="Israel">Israel</option>
+                                                <option value="Italy">Italy</option>
+                                                <option value="Jamaica">Jamaica</option>
+                                                <option value="Japan">Japan</option>
+                                                <option value="Jersey">Jersey</option>
+                                                <option value="Jordan">Jordan</option>
+                                                <option value="Kazakhstan">Kazakhstan</option>
+                                                <option value="Kenya">Kenya</option>
+                                                <option value="Kiribati">Kiribati</option>
+                                                <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                                                <option value="Korea, Republic of">Korea, Republic of</option>
+                                                <option value="Kuwait">Kuwait</option>
+                                                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                                <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                                                <option value="Latvia">Latvia</option>
+                                                <option value="Lebanon">Lebanon</option>
+                                                <option value="Lesotho">Lesotho</option>
+                                                <option value="Liberia">Liberia</option>
+                                                <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                                                <option value="Liechtenstein">Liechtenstein</option>
+                                                <option value="Lithuania">Lithuania</option>
+                                                <option value="Luxembourg">Luxembourg</option>
+                                                <option value="Macao">Macao</option>
+                                                <option value="Macedonia, the Former Yugoslav Republic of">Macedonia, the Former Yugoslav Republic of</option>
+                                                <option value="Madagascar">Madagascar</option>
+                                                <option value="Malawi">Malawi</option>
+                                                <option value="Malaysia">Malaysia</option>
+                                                <option value="Maldives">Maldives</option>
+                                                <option value="Mali">Mali</option>
+                                                <option value="Malta">Malta</option>
+                                                <option value="Marshall Islands">Marshall Islands</option>
+                                                <option value="Martinique">Martinique</option>
+                                                <option value="Mauritania">Mauritania</option>
+                                                <option value="Mauritius">Mauritius</option>
+                                                <option value="Mayotte">Mayotte</option>
+                                                <option value="Mexico">Mexico</option>
+                                                <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                                                <option value="Moldova, Republic of">Moldova, Republic of</option>
+                                                <option value="Monaco">Monaco</option>
+                                                <option value="Mongolia">Mongolia</option>
+                                                <option value="Montenegro">Montenegro</option>
+                                                <option value="Montserrat">Montserrat</option>
+                                                <option value="Morocco">Morocco</option>
+                                                <option value="Mozambique">Mozambique</option>
+                                                <option value="Myanmar">Myanmar</option>
+                                                <option value="Namibia">Namibia</option>
+                                                <option value="Nauru">Nauru</option>
+                                                <option value="Nepal">Nepal</option>
+                                                <option value="Netherlands">Netherlands</option>
+                                                <option value="New Caledonia">New Caledonia</option>
+                                                <option value="New Zealand">New Zealand</option>
+                                                <option value="Nicaragua">Nicaragua</option>
+                                                <option value="Niger">Niger</option>
+                                                <option value="Nigeria">Nigeria</option>
+                                                <option value="Niue">Niue</option>
+                                                <option value="Norfolk Island">Norfolk Island</option>
+                                                <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                                                <option value="Norway">Norway</option>
+                                                <option value="Oman">Oman</option>
+                                                <option value="Pakistan">Pakistan</option>
+                                                <option value="Palau">Palau</option>
+                                                <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                                                <option value="Panama">Panama</option>
+                                                <option value="Papua New Guinea">Papua New Guinea</option>
+                                                <option value="Paraguay">Paraguay</option>
+                                                <option value="Peru">Peru</option>
+                                                <option value="Philippines">Philippines</option>
+                                                <option value="Pitcairn">Pitcairn</option>
+                                                <option value="Poland">Poland</option>
+                                                <option value="Portugal">Portugal</option>
+                                                <option value="Puerto Rico">Puerto Rico</option>
+                                                <option value="Qatar">Qatar</option>
+                                                <option value="Reunion">Reunion</option>
+                                                <option value="Romania">Romania</option>
+                                                <option value="Russian Federation">Russian Federation</option>
+                                                <option value="Rwanda">Rwanda</option>
+                                                <option value="Saint Barthelemy">Saint Barthelemy</option>
+                                                <option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha</option>
+                                                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                                <option value="Saint Lucia">Saint Lucia</option>
+                                                <option value="Saint Martin (French part)">Saint Martin (French part)</option>
+                                                <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                                                <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                                                <option value="Samoa">Samoa</option>
+                                                <option value="San Marino">San Marino</option>
+                                                <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                                <option value="Senegal">Senegal</option>
+                                                <option value="Serbia">Serbia</option>
+                                                <option value="Seychelles">Seychelles</option>
+                                                <option value="Sierra Leone">Sierra Leone</option>
+                                                <option value="Singapore">Singapore</option>
+                                                <option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option>
+                                                <option value="Slovakia">Slovakia</option>
+                                                <option value="Slovenia">Slovenia</option>
+                                                <option value="Solomon Islands">Solomon Islands</option>
+                                                <option value="Somalia">Somalia</option>
+                                                <option value="South Africa">South Africa</option>
+                                                <option value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
+                                                <option value="Spain">Spain</option>
+                                                <option value="Sri Lanka">Sri Lanka</option>
+                                                <option value="Sudan">Sudan</option>
+                                                <option value="Suriname">Suriname</option>
+                                                <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                                                <option value="Swaziland">Swaziland</option>
+                                                <option value="Sweden">Sweden</option>
+                                                <option value="Switzerland">Switzerland</option>
+                                                <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                                                <option value="Taiwan">Taiwan</option>
+                                                <option value="Tajikistan">Tajikistan</option>
+                                                <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                                                <option value="Thailand">Thailand</option>
+                                                <option value="Timor-Leste">Timor-Leste</option>
+                                                <option value="Togo">Togo</option>
+                                                <option value="Tokelau">Tokelau</option>
+                                                <option value="Tonga">Tonga</option>
+                                                <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                                <option value="Tunisia">Tunisia</option>
+                                                <option value="Turkey">Turkey</option>
+                                                <option value="Turkmenistan">Turkmenistan</option>
+                                                <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                                                <option value="Tuvalu">Tuvalu</option>
+                                                <option value="Uganda">Uganda</option>
+                                                <option value="Ukraine">Ukraine</option>
+                                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                                <option value="United Kingdom">United Kingdom</option>
+                                                <option value="United States">United States</option>
+                                                <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                                                <option value="Uruguay">Uruguay</option>
+                                                <option value="Uzbekistan">Uzbekistan</option>
+                                                <option value="Vanuatu">Vanuatu</option>
+                                                <option value="Venezuela, Bolivarian Republic of">Venezuela, Bolivarian Republic of</option>
+                                                <option value="Viet Nam">Viet Nam</option>
+                                                <option value="Virgin Islands, British">Virgin Islands, British</option>
+                                                <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                                                <option value="Wallis and Futuna">Wallis and Futuna</option>
+                                                <option value="Western Sahara">Western Sahara</option>
+                                                <option value="Yemen">Yemen</option>
+                                                <option value="Zambia">Zambia</option>
+                                                <option value="Zimbabwe">Zimbabwe</option>
+                                                <option value="Great Britain">Great Britain</option>
+                                              </select>
+                    </div>
+                  </div>
+                  <div class="row form-group no-padding">
+                    <div class="col-sm-12">
+                      <label>State</label>
+                      <input type="text" name="GuestState" class="form-control" required="" ng-model="user.state">
+                    </div>
+                  </div>
+                  <div class="row form-group no-padding">
+                    <div class="col-sm-12">
+                      <label>City</label>
+                      <input type="text" name="GuestCity" class="form-control" required="" ng-model="user.city">
+                    </div>
+                  </div>
+                  <div class="row form-group no-padding">
+                    <div class="col-sm-12">
+                      <label>Email</label>
+                      <input type="email" name="GuestEmailID" class="form-control" required="" ng-model="user.email">
+                    </div>
+                  </div>
+                  <div class="row form-group no-padding">
+                    <div class="col-sm-12">
+                      <label>Phone Number</label>
+                      <input type="text" name="GuestMobileNo" class="form-control" data-parsley-num="" required="" ng-model="user.mobile">
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-sm-12 text-center">
+                      <button type="button" data-id="continuebtn1" class="btn book-btn continuebtn" style="font-size: 25px;padding: 5px 40px;" ng-click="addUserinfo()">Continue <i class="fa fa-angle-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-shadow" ng-controller="personaldetailController">
+              <div class="bdTitle2 two"><span>2</span> <b>Guest Information <i class="fa fa-check"></i></b></div>
+              <div class="itinerary-container middle-container" style="display: block;" id="guestdiv">
+                <div class="white-container">
+                  <div class="row2 border-title form-group">Traveller(s)</div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="dtlsOffer padding10">Please make sure that the names you enter match that of the passport/ identity card.</div>
+                    </div>
+                  </div>
+                                    <div class="light-blue-bg2 pax-details" style="border-bottom: 1px solid #efefef;">
+                    <h4 class="label label-info" style="margin-top: 5px;margin-bottom: 5px"><strong>Room 1:</strong></h4>
+                                        <div class="row small-padding form-group push-top-5 checkadultsname">
+                      <div class="col-sm-2 form-group">
+                        <div class="blue-label invisible">Adult</div>
+                        <label class="blue-label">Adult 1</label>
+                      </div>
+                      <div class="col-sm-2 form-group">
+                        <label class="blue-label" for="selecttitle_a1">Title <i class="red-text">*</i></label>
+                        <div class="controls">
+                          <select name="adults_title[]" class="form-control checktitle" id="selecttitle_a1" ng-model="guest.title">
+                            <option value="">Title</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Ms">Ms</option>
+                          </select>
+                          <span style="color: red;"></span>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 form-group">
+                        <label class="blue-label" for="firstname_a1">First Name <i class="red-text">*</i></label>
+                        <div class="controls">
+                          <input type="text" name="adults_fname[]" class="form-control" id="firstname_a1" placeholder="First Name" data-parsley-nametest="" ng-model="guest.firstname">
+                        </div>
+                      </div>
+                      <div class="col-sm-4 form-group">
+                        <label class="blue-label" for="lastname_a1">Last Name <i class="red-text">*</i></label>
+                        <div class="controls">
+                          <input type="text" name="adults_lname[]" class="form-control" id="lastname_a1" placeholder="Last Name" data-parsley-nametest="" ng-model="guest.lastname">
+                        </div>
+                      </div>
+                    </div>
+                                                                                                  </div>
+                                    <div class="row form-group">
+                    <div class="col-sm-12 text-center">
+                      <button type="button" data-id="continuebtn2" class="btn book-btn continuebtn" style="font-size: 25px;padding: 5px 40px;" ng-click="addGuestinfo()">Continue <i class="fa fa-angle-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box-shadow" ng-controller="personaldetailController">
+                <div class="bdTitle2 three"><span>3</span> <b>Extras <i class="fa fa-check"></i></b></div>
+                <div class="itinerary-container middle-container" style="display: block;" id="guestdiv">
+                  <div class="white-container">
+                    <div class="row2 border-title form-group">Transfers</div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="dtlsOffer padding10">Once your flight arrives you still have to get to your hotel and back to the airport at the end of your trip. Beat the cab line and take the advantage of the time and money savings of an airport transfer.</div>
+                      </div>
+                    </div>
+                                      <div class="light-blue-bg2 pax-details" style="border-bottom: 1px solid #efefef;">
+                                        <label class="blue-label" for="selecttitle_a1">Transportation to & from your hotel <i class="red-text">*</i></label>
+                                          <div class="row small-padding form-group push-top-5 checkadultsname">
+                                            <span>Select Passengers</span>
+                        <div class="col-sm-2 form-group">
+
+                          <div class="controls">
+                            <select name="adults_title[]" class="form-control" id="selecttitle_a1" ng-model="guest.title">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="3">4</option>
+                                <option value="3">5</option>
+                            </select>
+
+                          </div>
+                        </div>
+                        <span>#adult (2-up) $48.00</span>
+                      </div>
+                                                                                                    </div>
+                                      <div class="row form-group">
+                      <div class="col-sm-12 text-center">
+                        <button type="button" data-id="continuebtn2" class="btn book-btn continuebtn" style="font-size: 25px;padding: 5px 40px;" ng-click="addGuestinfo()">Continue <i class="fa fa-angle-right"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="box-shadow push-bottom-20">
+              <div class="bdTitle2 four"><span>4</span> <b>Payment Information <i class="fa fa-check"></i></b></div>
+              <div class="itinerary-container middle-container" style="display: block;" id="paymentdiv">
+                <div class="white-container">
+                  <!-- <div class="row form-group no-padding">
+                    <div class="col-sm-12">
+                      <label>Card Number</label>
+                      <input type="text" name="" class="form-control">
+                    </div>
+                  </div> -->
+                                    <div class="row">
+                    <div class="col-sm-12 text-center">
+                      <!-- <button value="Book Now" name="flight_itinerary_submit" class="btn btn-primary btn-search" id="searchHotelsBtn" style="color:fff;">Book Now</button> -->
+                      <input type="hidden" name="callBackId" value="" required="">
+                      <input type="hidden" name="hotelCode" value="" required="">
+                      <input type="hidden" name="searchId" value="" required="">
+                      <input type="hidden" name="sessionId" value="" required="">
+                      <input type="hidden" name="refNo" value="">
+                      <input type="hidden" name="promo_id" value="0">
+                      <button type="submit" class="btn book-btn" style="font-size: 25px;padding: 5px 40px;">Book Now <i class="fa fa-angle-right"></i></button>
+                    </div>
+                  </div>
+                                  </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <div class="itinerary-container box-shadow">
+            <div class="searchHdr2"><b>Summary of Charges</b></div>
+            <div class="white-container">
+              <span class="itinerary_promo" style="display:none"><a href="#" class="member_href promo_href" data-type="itinerary_promo" promo-night="1" data-searchid=""></a></span>
+              <table class="row2 rooms-table2">
+                <tbody>
+                  <tr>
+                    <td width="50%">
+                      <div class="form-label">Room cost:</div>
+                    </td>
+                    <td class="text-right"><i class="fa fa-dollar"></i><span id="roomcost">0</span> USD<br><!-- <small>(approax J<i class="fa fa-dollar"></i>22,200.09 JMD)</small> --></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-label">Nights :</div>
+                    </td>
+                    <td class="text-right" id="nonvalue"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-label">Rooms :</div>
+                    </td>
+                    <td class="text-right" id="totalrooms"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-label">Guests :</div>
+                    </td>
+                    <td class="text-right" id="totalguests">1</td>
+                  </tr>
+                  <tr class="total_disc_tr" style="display: none">
+                    <td>
+                      <div class="form-label" style="color: #42c745">Dicounts :</div>
+                    </td>
+                    <td class="text-right" style="color: #42c745"> - <i class="fa fa-dollar"></i>
+                      <span class="price-val total_disc_div">0</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-label">Rooms Subtotal :</div>
+                    </td>
+                    <td class="text-right"><i class="fa fa-dollar"></i>
+                      <span class="price-val total_cost_div" id="subtotal">0</span>
+                    </td>
+                  </tr>
+                                    <tr>
+                    <td>
+                        <a href="javascript:;" class="blue-link ajax-tabs taxes" data-id="taxes"><u>Tax and Fees :</u></a>
+                    </td>
+                    <td class="text-right"><i class="fa fa-dollar"></i>0.00</td>
+                  </tr>
+                                      <tr>
+                    <td colspan="2" style="padding: 0">
+                      <div class="ajax-div tax-div">
+                        <div class="ajax-tab-content ajax-content" colspan="2" style="display: none;">
+                          <div class="resultdiv" style="font-weight: normal;">
+                            <div class="fare-breakup">
+                              <table class="other-charges">
+                                <tbody>
+                                  <tr>
+                                    <td>Government Tax</td>
+                                    <td><i class="fa fa-dollar"></i>0</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Resort Fee</td>
+                                    <td><i class="fa fa-dollar"></i>0</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Service Fee</td>
+                                    <td><i class="fa fa-dollar"></i>0</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <div class="form-label grand-tr">
+                        <span>Total Charges</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <div class="form-label grand-td">
+                        <sup2><i class="fa fa-dollar"></i> </sup2>
+                        <span class="grand-total">0</span>
+                        <sub2>USD</sub2>
+                      </div>
+                      <!-- <div class="form-label text-center">
+                        (approax J<i class="fa fa-dollar"></i>51,422.36 JMD)
+                      </div> -->
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="itinerary-container box-shadow">
+            <div class="searchHdr2"><b>Your Booking Details</b></div>
+            <div class="white-container">
+              <table class="rooms-table row2">
+                <tbody>
+                  <tr>
+                    <td width="25%" style="vertical-align: top;">
+                      <!-- <img src="public/img/htl-gallery/hotel1.jpg" alt="" title="Single Non Ac Room" border="0" style="height: 80px;width: 80px"> -->
+                        <img src="{{s3Url}}{{hd.thumb_img}}" alt="" style="height: 80px;width: 80px">
+                    </td>
+                    <td>
+                        <h3>{{hd.hotel_name}} <span class="star star{{hd.hotel_star_rating}}"></span></h3>
+                      <div class="form-label"> Monday, May, 25, 2020 - Thursday, May, 28, 2020</div>
+
+                      <!-- <div class="form-label">
+                        <i class="fa fa-comments"></i> Okay, 5.5/10 <a href="javascript:;" class="rating ajax-tabs blue-link" data-id="rating"><u>51 Ratings</u></a>
+                      </div> -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <div class="form-label push-top-10"><b>Address:</b></div>
+                      <div class="form-label">{{hd.address}}</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <div class="form-label push-top-10"><b>Room Type:</b></div>
+                      <div class="form-label"> {{hd.room_type}} </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="itinerary-container box-shadow">
+            <div class="searchHdr2"><b>Important Information</b></div>
+            <div class="white-container">
+                <div>
+                    <div><h6><b>Hotel policy:</b></h6>{{hd.policy}}</div>
+                    <div><h6><b>Cancellation policy:</b></h6>{{hd.cancellation_policy}}</div>
+                    <div><h6><b>Child policy:</b></h6> <div ng-bind-html="hd.child_policy"></div></div>
+                    <div><h6><b>Terms & Conditions:</b></h6>{{hd.terms_and_condition}}</div>
+                </div>
+              <!-- <table class="rooms-table row2">
+                <tbody>
+                    <tr>
+                        <td>Hotel policy</td>
+                        <td>{{hd.policy}}</td>                                                                                                                                                          </td>
+                    </tr>
+                    <tr>
+                      <td>Cancellation policy</td>
+                      <td>{{hd.cancellation_policy}}</td>
+                    </tr>
+                    <tr>
+                        <td>Child policy</td>
+                        <td>{{hd.child_policy}}</td>
+                    </tr>
+                    <tr>
+                        <td>Terms & Conditions</td>
+                        <td>{{hd.terms_and_condition}}</td>
+                    </tr>
+                </tbody>
+              </table> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

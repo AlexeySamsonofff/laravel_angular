@@ -1,0 +1,37 @@
+.flex-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+li.ListMapView{
+  list-style-type: none;
+  float: left;
+  margin: 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .5px;
+  line-height: 33px;
+}
+
+ul.view_type li a {
+  border: 1px solid #eee;
+  padding: 6px 20px;
+  line-height: 1;
+  border-right: none;
+  color: #666;
+}
+
+.view_type a.active_list, .view_type a.active_list i, .view_type a.active_list:hover {
+  color: #fff;
+  background: #333;
+  cursor: default;
+}
+
+.ads-item-content{
+  margin-top: 20px;
+}
+
+a.active{
+  display: inline !important;
+}

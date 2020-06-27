@@ -1,0 +1,43 @@
+.flex-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.gap{
+  width: 5%;
+}
+
+.flex-contain{
+  display: flex;
+  // justify-content: ;
+}
+
+.item-rate{
+  border: 1px solid rgb(220,220,220);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.float-rights{
+  text-align: right;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.btn-room{
+  background-color: rgb(255, 103, 36);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 12px;
+  padding: 12px;
+}
+
+.btn-room1{
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 12px;
+  padding: 12px;
+}

@@ -1,0 +1,10 @@
+<h3 style="font-weight: bold;">
+  {{title}}
+</h3>
+<ul style="padding-left: 0;">
+  <li *ngFor="let item of items">
+    <mdb-icon fas icon="check" style="color: green;"></mdb-icon>
+    {{item.content}}
+
+  </li>
+</ul>

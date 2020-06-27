@@ -1,0 +1,76 @@
+<section>
+  <div>
+    <app-portfolio></app-portfolio>
+  </div>
+  <div>
+
+    <app-room-desc></app-room-desc>
+
+  </div>
+
+  <div>
+    <app-rates></app-rates>
+  </div>
+
+  <div>
+    <h2 style="font-weight: bold;color: rgb(51, 51, 51);">Amenities</h2>
+    <div class="row">
+      <div class="col-12 col-lg-3">
+        <app-item-amenity [title]="title1" [items]="items1"></app-item-amenity>
+        <app-item-amenity [title]="title2" [items]="items2"></app-item-amenity>
+      </div>
+      <div class="col-12 col-lg-3">
+        <app-item-amenity [title]="title3" [items]="items3"></app-item-amenity>
+        <app-item-amenity [title]="title4" [items]="items4"></app-item-amenity>
+      </div>
+      <div class="col-12 col-lg-3">
+        <app-item-amenity [title]="title1" [items]="items1"></app-item-amenity>
+        <app-item-amenity [title]="title2" [items]="items2"></app-item-amenity>
+      </div>
+      <div class="col-12 col-lg-3">
+        <app-item-amenity [title]="title3" [items]="items3"></app-item-amenity>
+        <app-item-amenity [title]="title4" [items]="items4"></app-item-amenity>
+      </div>
+    </div>
+    
+  </div>
+
+  <hr>
+  <!-- <div class='outer'>
+    <div class='inner'>
+
+    </div>
+  </div> -->
+  <div>
+    <h2 style="font-weight: bold;color: rgb(51, 51, 51);">Hightlights</h2>
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <app-highlights [title]="'Meal Plan Description'" [items]="items1"></app-highlights>
+        <app-highlights [title]="'Entertainment and family facilities'" [items]="items2"></app-highlights>
+      </div>
+      <div class="col-12 col-lg-4">
+        <app-highlights [title]="'Meal Plan Description'" [items]="items3"></app-highlights>
+        <app-highlights [title]="'Entertainment and family facilities'" [items]="items4"></app-highlights>
+      </div>
+      <div class="col-12 col-lg-4">
+        <app-highlights [title]="'Meal Plan Description'" [items]="items1"></app-highlights>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div>
+    <h2>Polices</h2>
+    <app-policy></app-policy>
+  </div>
+
+  <hr>
+
+  <div>
+    <h2>Important info</h2>
+    <p>
+      A damage deposit of USD 75 is requied on arrival. This will be collected by credit card. You should be reimbu on check-oiut. Your deposit will be refunded in fully by credit card, subject to an inspection of the property.
+    </p>
+  </div>
+</section>

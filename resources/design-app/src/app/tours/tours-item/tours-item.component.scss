@@ -1,0 +1,57 @@
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .checked{
+    color: orange;
+  }
+  
+  .item-container{
+    padding: 12px 25px 0px 8px;
+  }
+  
+  .ads{
+    background-color: white;
+    margin-top: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    // display: flex;
+    // flex-wrap: nowrap;
+  }
+  
+  .item-content{
+    color: #666;
+    font-size: 13px;
+    margin-top: 20px;
+  }
+  
+  .icons > span{
+    margin-right: 15px;
+  }
+  
+  .item-footer{
+    margin-top: 25px;
+  }
+  
+  #price > span:first-child{
+    font-size: 28px;
+  }
+  #price > span:last-child{
+    font-size: 23px;
+  }
+  
+  @media only screen and (max-width : 1200px){
+    .ads > div:first-child{
+      text-align: center;
+    }
+    #price > span:first-child{
+      font-size: 14px;
+    }
+    #price > span:last-child{
+      font-size: 10px;
+    }
+    .icons{
+      font-size: 12px;
+    }
+  }

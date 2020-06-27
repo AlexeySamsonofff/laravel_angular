@@ -1,0 +1,135 @@
+.item-content{
+  padding: 0 3px;
+  position: relative;
+}
+
+
+
+.mat-expansion-panel-header {
+  flex-direction: row-reverse;
+}
+
+.mat-expansion-panel-header-title{
+  margin-left: 10px;
+}
+
+
+.items-collection{
+  margin:20px 0 0 0;
+}
+.items-collection label.btn-default.active{
+  background-color:#007ba7;
+  color:#FFF;
+}
+.items-collection label.btn-default{
+  width:90%;
+  border:1px solid #305891;
+  margin:5px;
+  border-radius: 17px;
+  color: #305891;
+}
+.items-collection label .itemcontent{
+  width:100%;
+}
+.items-collection .btn-group{
+  width:90%;
+}
+
+.itemcontent > input[type=checkbox]{
+  position: absolute;
+  clip: rect(0,0,0,0);
+  pointer-events: none;
+}
+
+::ng-deep{
+  .ng5-slider .ng5-slider-pointer{
+    width: 23px !important;
+    height: 23px !important;
+    top: -9px !important;
+  }
+  .ng5-slider .ng5-slider-pointer:after{
+    top: 8px !important;
+    left: 8px !important;
+  }
+}
+
+.star-filter {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.star-filter li {
+  margin: 0;
+  cursor: pointer;
+}
+
+.star-filter li {
+  list-style-type: none;
+  float: left;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #e5e5e5;
+  flex: 1;
+  text-align: center;
+  /* padding: 6px; */
+  line-height: 1;
+  cursor: pointer;
+  /* border-right: 0; */
+  padding: 0;
+}
+
+.star-filter li.active {
+  background: #0a85c0;
+  border-color: #0a85c0;
+  border-right: 1px solid #7cbede;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.star-filter li.active small, .star-filter li.active .fa-star, .star-filter li.active input {
+  color: #fff;
+  cursor: default;
+}
+
+.star-filter li label {
+  margin: 0;
+  padding: 10px 4px;
+  cursor: pointer;
+}
+
+li label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  /* line-height: 1; */
+}
+
+.star-filter li small {
+  color: #0a85c0;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.star-filter .fa-star {
+  color: #0a85c0;
+  /* display: block; */
+  /* margin: 0 auto 8px; */
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.star-filter li input {
+  position: absolute;
+  cursor: pointer;
+}
+
+.StarRating {
+  position: absolute;
+  opacity: 0;
+}

@@ -1,0 +1,28 @@
+<section class="container-fluid" style="background: #ffffff; padding-bottom: 40px;">
+
+  <div class="container">
+    <div class="row">
+      <mat-horizontal-stepper labelPosition="bottom" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>CHOOSE YOUR ROOMS</ng-template>
+            <app-rooms></app-rooms>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>ENTER YOUR DETAILS</ng-template>
+            <app-details></app-details>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>SECURE YOUR BOOKING</ng-template>
+          <p>You are now done.</p>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </div>
+    
+    
+    
+  </div>
+</section>

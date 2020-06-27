@@ -1,0 +1,15 @@
+.item-content ul{
+  list-style: none;
+}
+
+.mat-expansion-indicator::after {
+  transform: rotate(225deg) !important;  
+}
+
+.mat-expansion-panel-header {
+  flex-direction: row-reverse;
+}
+
+.mat-expansion-panel-header-title{
+  margin-left: 10px;
+}

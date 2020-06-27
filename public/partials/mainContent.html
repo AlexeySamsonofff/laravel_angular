@@ -1,0 +1,428 @@
+
+        <header id="top" class="header" style="background-image: url(https://d1b2szyitz6nlt.cloudfront.net/eyJidWNrZXQiOiJ2YWNheW1lbm93LmNvbSIsImtleSI6InB1YmxpYy91cGxvYWRzL2Jhbm5lcnMvQWxsL2RlZmF1bHQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxNTAwLCJmaXQiOiJvdXRzaWRlIiwiaGVpZ2h0Ijo4NDh9LCJub3JtYWxpc2UiOnRydWV9fQ==)">
+            <div class="text-vertical-center">
+            <div class="col-lg-10 col-lg-offset-1">
+                <section id="reservation-form" class="pos-inside-slide">
+                <div class="row2 search-area no-padding">
+                    <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#hotels" data-toggle="tab">Hotels</a>
+                    </li>
+                    <li class="">
+                        <a href="#villas" data-toggle="tab">Villas</a>
+                    </li>
+                    <li class="">
+                        <a href="#tours" data-toggle="tab">Tours</a>
+                    </li>
+                    </ul>
+                    <div class="tab-content">
+                    <div class="tab-pane active" id="hotels" ng-controller="homeController">
+                        <form id="hotels-tab" class="tab-pane active" >
+                        <div class="col-sm-3">
+                            <!-- <div class="form-group">
+                            <label class="sr-only" for="destination2">Destination</label>
+                            <input type="text" name="city_name" class="form-control autocity ui-autocomplete-input" id="destination2" placeholder="Enter a City or Airport"  autocomplete="off" onclick="this.select();" pop-type="hotels-tab" required="" >
+
+                            </div> -->
+                            <div id="custom-search-input">
+                                <div class="col-sm-12">
+                                    <label class="sr-only" for="destination2">Destination</label>
+                                    <input type="text" name="city_name"  class="form-control autocity ui-autocomplete-input" id="city_name" ng-model="citySearch" placeholder="Enter a City or Airport" ng-keyup="searchcity()" >
+                                </div>
+                            </div>
+                            <span class="active_ajax" style="display: none;"></span>
+                            <div class="ajax_dropdown"></div>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                            <label class="sr-only" for="dph1">Check-In</label>
+                            <input name="checkIn" type="text" readonly value="" class="form-control calendar autodate" placeholder="Check-in" id="dph1" autocomplete="off" required="" ng-model="checkIn" data-provide="datepicker">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                            <label class="sr-only" for="dph2">Check-Out</label>
+                            <input name="checkOut" type="text" readonly value="" class="form-control calendar" placeholder="Check-out" id="dph2" autocomplete="off" required="" ng-model="checkOut" data-provide="datepicker">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 pax_drop">
+                            <div class="form-group">
+                              <!-- <label for="">No of Guests</label> -->
+                              <span class="form-control c-round c-theme travellers-input" id="travellers-hotel">
+                                <span class="adultsF travellers-input">1</span> adult,
+                                <span class="childsF travellers-input">0</span> child,
+                                <span class="room_countF travellers-input">1</span> Room
+                              </span>
+                            </div>
+                            <div class="travellers-input-popup" id="travellers-hotel-popup">
+                              <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+                              <!-- <label>Occupancy</label> -->
+                              <div class="trip-options">
+                                <p>Room - <span>1</span></p>
+                                <div class="numstepper small-btns">
+                                  <button type="button" class="quantity-btn quantity-left-minus btn-number-rooms"  data-type="minus" data-field="room_count"></button>
+                                  <input type="text" name="room_count" class="quantity-input input-number multi" value="1" min="1" max="4">
+                                  <button type="button" class="quantity-btn quantity-right-plus btn-number-rooms" data-type="plus" data-field="room_count"></button>
+                                </div>
+                                <div class="clone-room">
+                                  <p class="rooms" style="display: none;">Room - <span>2</span></p>
+
+                                  <div class="numstepper small-btns">
+                                    <p>Adults</p>
+                                    <button type="button" class="quantity-btn quantity-left-minus btn-number-arr" data-type="minus" data-field="adults">
+                                    </button>
+                                    <input type="text" name="adults[]" class="quantity-input input-number adults" value="1" min="1" max="14">
+                                    <button type="button" class="quantity-btn quantity-right-plus btn-number-arr" data-type="plus" data-field="adults">
+                                    </button>
+                                  </div>
+
+                                  <div class="clone-item roomage">
+                                    <input type="hidden" class="roomsno" value="1">
+                                    <p style="display: none;">Child Age - <span>1</span></p>
+                                    <div class="numstepper small-btns">
+                                      <p>Children</p>
+                                      <button type="button" class="quantity-btn quantity-left-minus btn-number-multi roomAge" data-type="minus" data-field="childs">
+                                      </button>
+                                      <input type="text" name="childs[]" class="quantity-input input-number multi childs" value="0" min="0" max="3">
+
+                                      <button type="button" class="quantity-btn quantity-right-plus btn-number-multi roomAge" data-type="plus" data-field="childs">
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div class="clonediv"></div>
+                                </div>
+                                <div class="clonediv-room"></div>
+                              </div>
+                              <i class="fa fa-times" aria-hidden="true">OK</i>
+                            </div>
+                          </div>
+
+
+
+
+
+
+
+
+                        <!-- <div class="col-sm-1">
+                            <div class="form-group">
+                            <label class="sr-only" for="rooms">Rooms</label>
+                            <select class="form-control" name="room_count" id="rooms">
+                                <option value="1">1 Room</option>
+                                <option value="2">2 Room</option>
+                                <option value="3">3 Room</option>
+                                <option value="4">4 Room</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-1">
+                            <div class="form-group">
+                            <label class="sr-only" for="adult">Adult</label>
+                            <select class="form-control" name="adults[]" id="adult">
+                                <option value="1">1 Adult</option>
+                                <option value="2">2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-1">
+                            <div class="form-group">
+                            <label class="sr-only" for="child">Children</label>
+                            <select class="form-control" name="childs[]" id="child">
+                                <option value="0">0 Child</option>
+                                <option value="1">1 Child</option>
+                                <option value="2">2 Child</option>
+                                <option value="3">3 Child</option>
+                            </select>
+                            </div>
+                        </div> -->
+                        <div class="col-sm-2">
+                            <div class="form-group" >
+                            <button type="button" class="btn btn-primary btn-block searchbtn" ng-click="go()">Search</button>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        </form>
+                    </div>
+                    <div class="tab-pane " id="villas">
+                        <form id="villas-tab" class="tab-pane active" action="https://www.vacaymenow.com/villa/results" method="post">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                            <label class="sr-only" for="villa_cityName">Destination</label>
+                            <input type="text" name="cityName" class="form-control autocity ui-autocomplete-input" id="villa_cityName" placeholder="Enter a City or Airport" autocomplete="off" onclick="this.select();" pop-type="villas-tab" required="">
+                            <input type="hidden" name="cityid" class="cityid" id="villacityid">
+                            </div>
+                            <span class="active_ajax" style="display: none;"></span>
+                            <div class="ajax_dropdown"></div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                            <label class="sr-only" for="dph1">From Date</label>
+                            <input name="fromDate" type="text" value="" class="form-control calendar autodate" placeholder="From" id="dpv1" autocomplete="off" required="">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                            <label class="sr-only" for="dph2">To Date</label>
+                            <input name="toDate" type="text" value="" class="form-control calendar" placeholder="To" id="dpv2" autocomplete="off" required="">
+                            </div>
+                        </div>
+                        <div class="col-sm-3 pax_drop">
+                            <div class="form-group">
+                            <!-- <label for="">No of Guests</label> -->
+                            <span class="form-control c-round c-theme travellers-input" id="travellers-villa">
+                                <span class="bedroomsF travellers-input">1</span> bedrooms,
+                                <span class="bathroomsF travellers-input">1</span> bathrooms,
+                                <span class="guestsF travellers-input">1</span> guests
+                            </span>
+                            </div>
+                            <div class="travellers-input-popup" id="travellers-villa-popup">
+                            <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+                            <div class="clearfix"></div>
+                            <div class="trip-options row no-padding">
+                                <div class="numstepper small-btns col-sm-4">
+                                <p>Bedrooms</p>
+                                <button type="button" class="quantity-btn quantity-left-minus btn-number-v" data-type="minus" data-field="bedrooms">
+                                </button>
+                                <input type="text" name="bedrooms" class="quantity-input input-number-v bedrooms" value="1" min="1" max="20" readonly="">
+                                <button type="button" class="quantity-btn quantity-right-plus btn-number-v" data-type="plus" data-field="bedrooms">
+                                </button>
+                                </div>
+                                <div class="numstepper small-btns col-sm-4">
+                                <p>Bathrooms</p>
+                                <button type="button" class="quantity-btn quantity-left-minus btn-number-v" data-type="minus" data-field="bathrooms">
+                                </button>
+                                <input type="text" name="bathrooms" class="quantity-input input-number-v bathrooms" value="1" min="1" max="20" readonly="">
+                                <button type="button" class="quantity-btn quantity-right-plus btn-number-v" data-type="plus" data-field="bathrooms">
+                                </button>
+                                </div>
+                                <div class="numstepper small-btns col-sm-4">
+                                <p>Guests</p>
+                                <button type="button" class="quantity-btn quantity-left-minus btn-number-v" data-type="minus" data-field="guests">
+                                </button>
+                                <input type="text" name="guests" class="quantity-input input-number-v guests" value="1" min="1" max="20" readonly="">
+                                <button type="button" class="quantity-btn quantity-right-plus btn-number-v" data-type="plus" data-field="guests">
+                                </button>
+                                </div>
+                            </div>
+                            <i class="fa fa-times" aria-hidden="true">OK</i>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                            <button type="button" class="btn btn-primary btn-block searchbtn" ng-click="go()"> Search</button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    <div class="tab-pane " id="tours">
+                        <form id="tours-tab" class="tab-pane" action="https://www.vacaymenow.com/holiday/holidaysearch" method="post">
+                        <input type="hidden" value="1" name="holiday_type" id="holiday_type">
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                            <label class="sr-only" for="hol_cityName">Destination</label>
+                            <input type="text" name="cityName" class="form-control autocity ui-autocomplete-input" id="hol_cityName" placeholder="Destination" autocomplete="off" onclick="this.select();" pop-type="tours-tab" required="">
+                            <input type="hidden" name="cityid" class="cityid" id="holicityid">
+                            </div>
+                            <span class="active_ajax" style="display: none;"></span>
+                            <div class="ajax_dropdown"></div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                            <button type="btn" class="btn btn-primary btn-block searchbtn">Search</button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br>
+                        <div class="col-sm-3" style="padding-right: 8px;">
+                            <div class="form-group">
+                            <label class="sr-only" for="dpt1">From Date</label>
+                            <input name="fromDate" type="text" value="" class="form-control calendar autodate" placeholder="From" id="dpt1" autocomplete="off" required="">
+                            </div>
+                        </div>
+                        <div class="col-sm-3" style="padding-left: 8px;">
+                            <div class="form-group">
+                            <label class="sr-only" for="dpt2">To Date</label>
+                            <input name="toDate" type="text" value="" class="form-control calendar" placeholder="To" id="dpt2" autocomplete="off" required="">
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+                </section>
+            </div>
+            </div>
+        </header>
+
+        <section class="signup bg-white" style="padding: 30px 0;border-bottom: 3px solid #000;">
+        <div class="container">
+            <form action="https://www.vacaymenow.com/home/subscribe" method="post">
+            <div class="row small-padding">
+                <div class="col-md-7 col-sm-5">
+                <h4>Sign up for email-only coupons, special offers and promotions</h4>
+                </div>
+                <div class="col-md-2">
+                <input type="email" name="email" class="form-control" placeholder="Enter your email address" required="">
+                </div>
+                <div class="col-md-2 col-sm-2">
+                <input type="submit" class="form-control border-btn" value="Send me deals">
+                </div>
+            </div>
+            </form>
+        </div>
+        </section>
+        <section class="popular-section travelone-section bg-white">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-12 effect-5 effects no-border-img">
+                <div class="top-txt-title">
+                <div class="text-heading">Today's Popular Destinations</div>
+                </div>
+                <div class="slider">
+                <div class="flexslider carousel">
+
+                <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                                    <li style="width: 372px; margin-right: 10px; float: left; display: block;">
+                        <div class="trip-travelone-disc">
+                        <form role="form" action="https://www.vacaymenow.com/hotels/results" method="post">
+                            <input type="hidden" name="cityid" value="21059">
+                            <input type="hidden" name="cityName" value="Negril, Jamaica">
+                            <input type="hidden" name="checkIn" value="22/05/2020"><input type="hidden" name="checkOut" value="23/05/2020"><input type="hidden" name="room_count" value="1"><input type="hidden" name="adults[]" value="1"><input type="hidden" name="adults[]" value="1"><input type="hidden" name="adults[]" value="1"><input type="hidden" name="adults[]" value="1"><input type="hidden" name="childs[]" value="0"><input type="hidden" name="childs[]" value="0"><input type="hidden" name="childs[]" value="0"><input type="hidden" name="childs[]" value="0">                      <button class="view view-fifth" type="submit" style="border: none;">
+                            <figure class="triggerAnimation animated fadeInDown" data-animate="fadeInDown" style="">
+                                <div>
+                                <img src="https://d1b2szyitz6nlt.cloudfront.net/eyJidWNrZXQiOiJ2YWNheW1lbm93LmNvbSIsImtleSI6InB1YmxpYy91cGxvYWRzL3BvcHVsYXJfZGVzdGluYXRpb24vbmVncmlsamFtYWljYS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjM3MiwiZml0IjoiY292ZXIiLCJoZWlnaHQiOjIwOX0sIm5vcm1hbGlzZSI6dHJ1ZX19" alt="" draggable="false">
+                                </div>
+                            </figure>
+                            <div class="mask">
+                                <div class="main">
+                                <h1>Negril</h1>
+                                <p>Famous for its beautiful seven miles of white sand beach and turquoise waters. Enjoy a relaxing vacation with the family.</p>
+                                </div>
+                            </div>
+                            </button>
+                        </form>
+                        </div>
+                    </li>
+                                    <li style="width: 372px; margin-right: 10px; float: left; display: block;">
+                        <div class="trip-travelone-disc">
+                        <form role="form" action="https://www.vacaymenow.com/hotels/results" method="post">
+                            <input type="hidden" name="cityid" value="21057">
+                            <input type="hidden" name="cityName" value="Montego Bay, Jamaica">
+                            <input type="hidden" name="checkIn" value="22/05/2020"><input type="hidden" name="checkOut" value="23/05/2020"><input type="hidden" name="room_count" value="1"><input type="hidden" name="adults[]" value="1"><input type="hidden" name="adults[]" value="1"><input type="hidden" name="adults[]" value="1"><input type="hidden" name="adults[]" value="1"><input type="hidden" name="childs[]" value="0"><input type="hidden" name="childs[]" value="0"><input type="hidden" name="childs[]" value="0"><input type="hidden" name="childs[]" value="0">                      <button class="view view-fifth" type="submit" style="border: none;">
+                            <figure class="triggerAnimation animated fadeInDown" data-animate="fadeInDown" style="">
+                                <div>
+                                <img src="https://d1b2szyitz6nlt.cloudfront.net/eyJidWNrZXQiOiJ2YWNheW1lbm93LmNvbSIsImtleSI6InB1YmxpYy91cGxvYWRzL3BvcHVsYXJfZGVzdGluYXRpb24vbW9udGVnb2JheS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjM3MiwiZml0IjoiY292ZXIiLCJoZWlnaHQiOjIwOX0sIm5vcm1hbGlzZSI6dHJ1ZX19" alt="" draggable="false">
+                                </div>
+                            </figure>
+                            <div class="mask">
+                                <div class="main">
+                                <h1>Montego Bay</h1>
+                                <p>Jamaica’s second city boast some of the best Hotels, Villas and things to do for a perfect vacation experience.</p>
+                                </div>
+                            </div>
+                            </button>
+                        </form>
+                        </div>
+                    </li>
+                                    <li style="width: 372px; margin-right: 10px; float: left; display: block;">
+                        <div class="trip-travelone-disc">
+                        <form role="form" action="https://www.vacaymenow.com/hotels/results" method="post">
+                            <input type="hidden" name="cityid" value="21060">
+                            <input type="hidden" name="cityName" value="Ocho Rios, Jamaica">
+                            <input type="hidden" name="checkIn" value="22/05/2020"><input type="hidden" name="checkOut" value="23/05/2020"><input type="hidden" name="room_count" value="1"><input type="hidden" name="adults[]" value="1"><input type="hidden" name="adults[]" value="1"><input type="hidden" name="adults[]" value="1"><input type="hidden" name="adults[]" value="1"><input type="hidden" name="childs[]" value="0"><input type="hidden" name="childs[]" value="0"><input type="hidden" name="childs[]" value="0"><input type="hidden" name="childs[]" value="0">                      <button class="view view-fifth" type="submit" style="border: none;">
+                            <figure class="triggerAnimation animated fadeInDown" data-animate="fadeInDown" style="">
+                                <div>
+                                <img src="https://d1b2szyitz6nlt.cloudfront.net/eyJidWNrZXQiOiJ2YWNheW1lbm93LmNvbSIsImtleSI6InB1YmxpYy91cGxvYWRzL3BvcHVsYXJfZGVzdGluYXRpb24vb2Nob3Jpb3MuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjozNzIsImZpdCI6ImNvdmVyIiwiaGVpZ2h0IjoyMDl9LCJub3JtYWxpc2UiOnRydWV9fQ==" alt="" draggable="false">
+                                </div>
+                            </figure>
+                            <div class="mask">
+                                <div class="main">
+                                <h1>Ocho Rios</h1>
+                                <p>The former fishing village boast some of the best Hotels, Villas and things to do for a perfect vacation experience.</p>
+                                </div>
+                            </div>
+                            </button>
+                        </form>
+                        </div>
+                    </li>
+                                    </ul></div><ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev flex-disabled" href="#" tabindex="-1"></a></li><li class="flex-nav-next"><a class="flex-next flex-disabled" href="#" tabindex="-1"></a></li></ul></div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+        <section class="top-section travelone-section bg-white">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-12 effect-5 effects no-border-img">
+                <div class="top-txt-title">
+                <div class="text-heading"> SPECIAL OFFERS </div>
+                </div>
+                <div class="slider">
+                <div class="flexslider carousel">
+
+                <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                                    <li style="width: 372px; margin-right: 10px; float: left; display: block;">
+                        <div class="trip-travelone-disc">
+                                                <a class="view view-fifth" href="  https://go.vacaymenow.com   " target="_blank" style="text-decoration: none;">
+                                                <figure class="triggerAnimation animated fadeInDown" data-animate="fadeInDown" style="">
+                            <div class="img-effect-flash">
+                                <img src="https://s3.us-east-2.amazonaws.com/vacaymenow.com/public/uploads/top_deals/godehhome.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA3NGXKBBPWLE7CMGP%2F20200521%2Fus-east-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20200521T203607Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=300&amp;X-Amz-Signature=2d9eb8a9ce15870910335130f7705eb55c295841880c6fff4f69c699a4609e43" alt="" draggable="false">
+                            </div>
+                            </figure>
+                            <div class="mask" style="height:auto;">
+                            <div class="main">
+                                <h3>     Go! Deh Adventure Pass</h3>
+                                <p>  The best way to experience Jamaica. Save up to 25% on tours and experience.   </p>
+                            </div>
+                            </div>
+                        </a>
+                        </div>
+                    </li>
+                                    <li style="width: 372px; margin-right: 10px; float: left; display: block;">
+                        <div class="trip-travelone-disc">
+                                                <a class="view view-fifth" href=" https://reggae.vacaymenow.com/ " target="_blank" style="text-decoration: none;">
+                                                <figure class="triggerAnimation animated fadeInDown" data-animate="fadeInDown" style="">
+                            <div class="img-effect-flash">
+                                <img src="https://s3.us-east-2.amazonaws.com/vacaymenow.com/public/uploads/top_deals/members-club.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA3NGXKBBPWLE7CMGP%2F20200521%2Fus-east-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20200521T203607Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=300&amp;X-Amz-Signature=56fff1fe9c2800d327139daefcb17da07c518ce4ca5bef912c1c0b9271170436" alt="" draggable="false">
+                            </div>
+                            </figure>
+                            <div class="mask" style="height:auto;">
+                            <div class="main">
+                                <h3>   Vacaymenow Reggae Club   </h3>
+                                <p>       Save up to 25% on select hotels. Subscribe now to view member prices!       </p>
+                            </div>
+                            </div>
+                        </a>
+                        </div>
+                    </li>
+                                    <li style="width: 372px; margin-right: 10px; float: left; display: block;">
+                        <div class="trip-travelone-disc">
+                                                <a class="view view-fifth" href="   https://discover.vacaymenow.com    " target="_blank" style="text-decoration: none;">
+                                                <figure class="triggerAnimation animated fadeInDown" data-animate="fadeInDown" style="">
+                            <div class="img-effect-flash">
+                                <img src="https://s3.us-east-2.amazonaws.com/vacaymenow.com/public/uploads/top_deals/discover-jamaica.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIA3NGXKBBPWLE7CMGP%2F20200521%2Fus-east-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20200521T203607Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=300&amp;X-Amz-Signature=0c5fbdad42eb6cd4b8489fa20605168799cdb6e0e7f2995b8fb71b742b279fba" alt="" draggable="false">
+                            </div>
+                            </figure>
+                            <div class="mask" style="height:auto;">
+                            <div class="main">
+                                <h3>  Discover Jamaica  </h3>
+                                <p>Start your vacation planning here. Discover the culture, places, food and things to do.</p>
+                            </div>
+                            </div>
+                        </a>
+                        </div>
+                    </li>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>

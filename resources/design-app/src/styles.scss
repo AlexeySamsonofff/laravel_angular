@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+// @import '~css-star-rating/scss/star-rating';
+// @import "~angular-star-rating/assets/css/star-rating";
+// @import "~font-awesome/css/font-awesome.css";
+
+.navbar { box-shadow: none !important; padding: 0; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description{
+  display: block !important;
+}
+
+.mat-expansion-panel-header-description, .mat-expansion-indicator::after{
+  color: #333;
+}
+
+.mat-expansion-panel-body{
+  padding: 0 0 10px !important;
+}
+
+span.navbar-toggler-icon{
+  background-image: url(https://mdbootstrap.com/img/svg/hamburger6.svg?color=lightgray) !important;
+}
+
+input{
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+
+.ListMapView > a.active{
+  display: inline;
+}
+
+.ListMapView > a.active i.active{
+  display: inline;
+}
+
+// input[type="date"]::-calendar-picker-indicator {
+//   background: transparent;
+//   bottom: 0;
+//   color: transparent;
+//   cursor: pointer;
+//   height: auto;
+//   left: 0;
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+//   width: auto;
+// }
+
+@media only screen and (min-width : 1200px){
+  .container{
+    max-width: 1232px;
+  }
+}
+

@@ -1,0 +1,64 @@
+.ads{
+  // border: solid 2px rgb(230, 230, 230);
+  background-color: white;
+  margin-top: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header h4{
+  margin-top: 20px;
+}
+
+.item-content{
+  color: #666;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.icons > span{
+  margin-right: 15px;
+}
+
+.btn-book{
+  background-color: rgb(255, 103, 36);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 12px;
+  padding: 12px;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
+.overlay{
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.float-rights{
+  text-align: right;
+}
+
+@media only screen and (max-width : 1200px){
+  .ads > div:first-child{
+    text-align: center;
+  }
+
+
+}
+
+@media only screen and (max-width : 768px){
+  .float-rights > div{
+    display: inline-block;
+    vertical-align: middle;
+    
+  }
+
+  .float-rights{
+    text-align: left;
+  }
+}

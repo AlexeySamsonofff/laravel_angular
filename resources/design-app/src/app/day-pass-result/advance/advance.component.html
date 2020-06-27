@@ -1,0 +1,47 @@
+<section class="container-fluid" style="background: #f9f9f9; padding-bottom: 40px;">
+
+  <div class="container">
+    <app-signup-form></app-signup-form>
+    <app-search-form-advance></app-search-form-advance>
+
+    <div style="margin-top: 20px;">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-3">
+          <app-filter-widget-advance></app-filter-widget-advance>
+        </div>
+        <div class="col-12 col-md-12 col-lg-9">
+          <div>
+            <div class="flex-container">
+              <div>
+                <select class="form-control HotelSorting" name="HotelSorting">
+                  <option value="price" data-order="asc" rel="data-price">Sort by Price(Lowest)</option>
+                  <option value="price" data-order="desc" rel="data-price">Sort by Price(Highest)</option>
+                 <!--  <option value="popular" data-order="desc" rel="data-star">Sort by Most Popular</option> -->
+                  <option value="name" data-order="asc" rel="data-hotel-name">Sort by Name(a-z)</option>
+                  <option value="name" data-order="desc" rel="data-hotel-name">Sort by Name(z-a)</option>
+                <!--   <option value="recommend" data-order="desc" rel="data-star">Sort by Recommended</option> -->
+                </select>
+              </div>
+              <div>
+                <ul class="view_type">
+                  <li class="ListMapView"><a class="active" data-val="List" href="javascript:;" title="List View"><i class="fa fa-th-list active"></i> List</a></li>
+                  <li class="ListMapView"><a data-val="Grid" href="javascript:;" title="Grid View" class=""><i class="fa fa-th"></i> Grid</a></li>
+                  <li class="ListMapView"><a data-val="Map" href="javascript:;" title="Map View" class=""><i class="fa fa-map-marker"></i> Map</a></li>
+                </ul>
+              </div>
+            </div>  
+          </div>
+          
+          <div class="ads-item-content">
+            <app-ads-item-advance></app-ads-item-advance>
+            <app-ads-item-advance></app-ads-item-advance>
+            <app-ads-item-advance></app-ads-item-advance>
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

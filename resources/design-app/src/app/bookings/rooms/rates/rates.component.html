@@ -1,0 +1,109 @@
+
+<section>
+  <h2>Room Rates
+    <small>(1 nights: 20/01/2020 - 30/01/2020)&nbsp;</small>
+    <small>
+      <a href="">Change Dates</a>
+    </small>
+  </h2>
+  <form [formGroup]="rateFormGroup" class="flex-container" style="margin-bottom: 20px;">
+    <input type="date" class="form-control" formControlName="date_start">
+    <span class="gap"></span>
+    <input type="date" class="form-control" formControlName="date_end">
+    <span class="gap"></span>
+    
+    <span class="gap"></span>
+    <input type="text" class="form-control" formControlName="policy">
+    <span class="gap"></span>
+    <input type="submit" class="btn btn-primary" value="Update">
+  </form>
+
+  <div class="item-rate">
+    <div class="flex-container">
+      <div>
+        <div class="flex-contain">
+          <div>
+            <img src="assets/images/top1.png" width="340" alt="room image">
+          </div>
+          <div style="margin-left: 30px;display: flex;flex-direction: column;justify-content: space-between;">
+            <div>
+              <h2 style="font-weight: bold;margin-top: 5px;">King Room</h2>
+              <p style="font-weight : bold;font-size: 12px;">
+                <mdb-icon fas icon="bed"></mdb-icon>
+                1 King, Sleeps 2
+              </p>
+              <p><i class="fa fa-wifi"></i>&nbsp;&nbsp;Free Wifi</p>
+              <p>All Inclusive</p>  
+            </div>
+            
+            <div>
+              <a href="">Room Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="float-rights" style="display: flex;flex-direction: column;justify-content: space-between;">
+        <div>
+          <div>
+            <span class="badge badge-success" style="padding: 5px;border-radius:10px;font-size:12px">30% off</span>
+          </div>
+          <div style="margin-top: 20px;">
+            <p>
+              <b style="font-size: 20px;">716$</b><b> USD</b>
+            </p>
+            <p><b>Per Night</b></p>
+            
+            <p>$716 per night</p>
+          </div>
+        </div>
+        
+        <div>
+          <button type="button" class="btn btn-primary btn-room">Select Room</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="item-rate">
+    <div class="flex-container">
+      <div>
+        <div class="flex-contain">
+          <div>
+            <img src="assets/images/top1.png" width="340" alt="room image">
+          </div>
+          <div style="margin-left: 30px;display: flex;flex-direction: column;justify-content: space-between;">
+            <div>
+              <h2 style="font-weight: bold;margin-top: 5px;">King Room</h2>
+              <p style="font-weight : bold;font-size: 12px;">
+                <mdb-icon fas icon="bed"></mdb-icon>
+                1 King, Sleeps 2
+              </p>
+              <p><i class="fa fa-wifi"></i>&nbsp;&nbsp;Free Wifi</p>
+              <p>All Inclusive</p>  
+            </div>
+            
+            <div>
+              <a href="">Room Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="float-rights" style="display: flex;flex-direction: column;justify-content: space-between;">
+        <div>
+          <p>
+            <b style="font-size: 20px;">716$</b><b> USD</b>
+          </p>
+          <p><b>Per Night</b></p>
+          
+          <p>$716 per night</p>
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary btn-room1">Select Room</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+</section>

@@ -1,0 +1,54 @@
+.headers{
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checked{
+  color: orange;
+}
+
+.flex-container{
+  display: flex;
+  align-content: space-between;
+}
+
+.img-banner > div{
+  float: left;
+  width: 50%;
+}
+
+.img-banner > div:first-child{
+  margin-right: 2px;
+}
+
+.content-pass{
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.content-pass h3{
+  font-weight: bold;
+  font-size: 25px;
+  color: rgb(40, 40, 40);
+}
+
+.pass-form{
+  width: 33%;
+  border-radius: 5px;
+  outline-color: rgb(190, 190, 190);
+  
+}
+
+span.space{
+  width: 1%;
+}
+
+.btn-book{
+  background-color: rgb(255, 103, 36);
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  padding: 8px 40px;
+  margin-left: 15px;
+}

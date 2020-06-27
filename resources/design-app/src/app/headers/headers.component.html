@@ -1,0 +1,70 @@
+<div class="container">
+
+  <div class="">
+    <!--Navbar-->
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark" [containerInside]="false">
+
+      <!-- Navbar brand -->
+      <mdb-navbar-brand><a class="navbar-brand" href="#">
+        <img src="assets/images/logo.png" width="190" alt="logo">
+      </a></mdb-navbar-brand>
+
+      <!-- Collapsible content -->
+      <links>
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto" style="border-right: 1px solid rgb(218,218,218);">
+          <li class="nav-item active">
+            <a class="nav-link waves-light" mdbWavesEffect routerLink="/bookings">hotels<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect routerLink="/daypass">daypass</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect routerLink="/daypass_result">daypass result</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect routerLink="/tours">tours</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect routerLink="/tours_a">discover jamaica</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect routerLink="/">reggae club</a>
+          </li>
+        </ul>
+        <!-- Links -->
+
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+          <li class="nav-item">
+            <a class="nav-link" href="" style="padding: 3px 5px;color: white !important;background: #00467e;border-radius: 4px;margin-top: 5px;">list your property</a>
+          </li>
+          <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              <mdb-icon fas icon="user" style="color: gray;"></mdb-icon><span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <!-- <i class="fa fa-flag-us"></i> -->
+              <img src="assets/images/us-flag.png" width="20">
+              USD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tel:18338222963">
+              <i class="fa fa-phone" style="color: gray;"></i> 
+              &nbsp;1-833-822-2963</a>
+          </li>
+        </ul>
+      </links>
+      <!-- Collapsible content -->
+
+    </mdb-navbar>
+    <!--/.Navbar-->
+  </div>
+</div>

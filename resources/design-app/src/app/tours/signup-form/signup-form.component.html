@@ -1,0 +1,20 @@
+<section class="bg-orange">
+  <form [formGroup]="signupFormGroup">
+    <h4 style="font-size: 14px; color: black; margin-bottom: 15px;">Save up to 25% on select tours. Subscribe now for great savings!</h4>
+    <div class="row">
+      <div class="col-md-3">
+        <input type="text" class="form-control email-holder shadow" placeholder="Enter your email address">
+        
+      </div>
+
+      <div class="col-md-3">
+        <button type="submit" [disabled]="!signupFormGroup.valid" class="form-control btn btn-primary shadow" style="background-color: #055ca1; font-size: 14px;">Sign Up, It's Free!</button>
+      </div>
+      <div class="col-md-6">
+        Or,<a style="color: #0b0129; text-decoration: underline; font-size: 13px;">sign in</a>
+      </div>
+
+    </div>
+
+  </form>
+</section>

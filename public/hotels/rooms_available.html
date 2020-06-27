@@ -1,0 +1,293 @@
+    <input type="hidden" id="roomdetailhid">
+    <div class="rooms_loop activeone loop0" style="display: block" ng-repeat="rooms in roomdetails">
+        <div class="row">
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            <div class="" style="" ng-init="roomimage(rooms.room_code)">
+                    <div id="room-gallery-divloop0" class="room-gallery-div imgs-grid imgs-grid-1"><div class="imgs-grid-image"><div class="image-wrap"><img src="{{s3Url}}{{roomimage.gallery_img}}" alt="" title=""><div class="view-all"><span class="view-all-cover"></span><span class="view-all-text"><i class="fa fa-picture-o moreicon"></i></span></div></div></div></div>
+
+
+              <script>
+                $(function() {
+                  //alert(images2);
+                    $('#room-gallery-divloop0').imagesGrid({
+                        images: ["https:\/\/s3.us-east-2.amazonaws.com\/vacaymenow.com\/supplier\/uploads\/41\/hotel\/57\/room\/137\/supplier_room_gallery_images\/gallery\/8278124.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3NGXKBBPWLE7CMGP%2F20200524%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200524T181609Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=f349c83e7d64e20960994f54037d14b818d7fe1c0095bcfb2493c86b9e619e47","https:\/\/s3.us-east-2.amazonaws.com\/vacaymenow.com\/supplier\/uploads\/41\/hotel\/57\/room\/137\/supplier_room_gallery_images\/gallery\/75ab91d5.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3NGXKBBPWLE7CMGP%2F20200524%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200524T181609Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=c9f221040072390a02d348a373399f1c0ab726a41e479d16ae99ac7289894213","https:\/\/s3.us-east-2.amazonaws.com\/vacaymenow.com\/supplier\/uploads\/41\/hotel\/57\/room\/137\/supplier_room_gallery_images\/gallery\/f03d0c350.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3NGXKBBPWLE7CMGP%2F20200524%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200524T181609Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=d673749ec99db66336c7d0a27296ce809656a4c20c1e296e739fac4b2b0ed28c"],
+                        align: false,
+                        cells: 1,
+                        getViewAllText: function(imgsCount) { return '<i class="fa fa-picture-o moreicon"></i>' }
+                    });
+                });
+              </script>
+                    </div>
+          </div>
+          <div class="col-md-7 col-sm-7 col-xs-9">
+            <h5>{{roomcount}}-{{rooms.room_code}} - {{rooms.room_name}} ( {{rooms.room_type}} ) <a href="javascript:;" class="blue-link details-link" id="details-link{{rooms.room_code}}" ng-click="showroomdesc(rooms.room_code);"><u>Room Details</u></a></h5>
+                    <ul>
+                <li><i class="fa fa-star" style="color: #05aeed"></i> <span class="min_stay">{{rooms.min_night_stay}}</span> Nights Minimum Stay Required</li>
+              </ul>
+                          <ul>
+                                    <li><i class="fa fa-check"></i> All Inclusive</li>
+                                  </ul>
+                </div>
+          <div class="col-md-3 col-sm-3 col-xs-12 text-right push-top-10 promo_parent_div">
+            <div class="badge_div"></div>
+            <span class="org_price_div"></span>
+            <b class="price-tag">
+              <i class="fa fa-dollar"></i>
+              <span>
+                <span class="price-val disc_cost_div">{{rooms.org_amt}}</span> <sub>USD</sub>
+
+              </span>
+            </b>
+            <p style="font-size: 11px;color: #333;font-weight: 700;">Per Night</p>
+
+             <p style="font-size: 12px;color: #333;">
+                <i class="fa fa-dollar"></i>
+                <span class="price-val-total disc_cost_div">{{rooms.org_amt * numOfnights}}</span> <span> For {{numOfnights}} Nights</span>
+                <input type="hidden" value="{{rooms.org_amt * numOfnights}}" id="rratehid{{rooms.room_code}}">
+                <input type="hidden" value="{{numOfnights}}" id="nonhid{{rooms.room_code}}">
+                <input type="hidden" value="{{rooms.org_amt}}" id="roomcost{{rooms.room_code}}">
+                <input type="hidden" value="{{rooms.room_type}}" id="roomtype{{rooms.room_code}}">
+            </p>
+            <input type="hidden" name="callBackId" value="aG90ZWxfY3Jz">
+            <input type="hidden" name="room_count" value="1">
+            <input type="hidden" name="hotelCode" value="0000100053">
+            <input type="hidden" name="ses_id" value="be3930afeb78bc69a9c8dfca5a5e1fa26581eede">
+            <input type="hidden" name="searchId" value="{{rooms.room_code}}">
+            <input type="hidden" name="refNo" value="VMN021JQWF9Z1">
+            <div class="button-toggle" style="display: inline;">
+              <input type="radio" name="0_searchId" value="{{rooms.room_code}}" class="toggle-select" id="{{'0_'+rooms.room_code}}" title="Select Room" checked="checked" ng-click="roomrate(rooms.room_code)">
+              <label for="{{'0_'+rooms.room_code}}"></label>
+            </div>
+          </div>
+        </div>
+        <div class="details-content" id="details-content{{rooms.room_code}}" style="display: none;">
+          <div class="row">
+            <div class="col-md-12">
+              <h5>Room Description</h5>
+              <span>{{rooms.room_description}}</span>
+            </div>
+          </div>
+          <div class="row push-top-10">
+            <div class="col-md-2 col-sm-4 col-xs-6">
+              <h5>Room Type</h5>
+              <span>{{rooms.room_type}}</span>
+            </div>
+                        <!--       <div class="col-md-8 col-sm-4 col-xs-6 canc_policy">
+              <h5>Policies</h5>
+              <span></span>
+            </div>
+             -->
+          </div>
+              <div class="row push-top-10 hotel-dtls-amenities">
+            <div class="col-md-12">
+              <h5>Amenities</h5>
+              <ul style="margin-left: 0;">
+                          <li class="active">» AC</li>
+                          <li class="active">» Balcony</li>
+                          <li class="active">» Flat Screen TV</li>
+                          <li class="active">» Minibar</li>
+                          <li class="active">» Garden View</li>
+                          <li class="active">» Tea/Coffee Maker</li>
+                          <li class="active">» Telephone</li>
+                          <li class="active">» Cable Channels</li>
+                          <li class="active">» Ironing Facilities</li>
+                          <li class="active">» Wardrobe Or Closet</li>
+                          <li class="active">» Safe</li>
+                          <li class="active">» Hairdryer</li>
+                          <li class="active">» Towels</li>
+                          <li class="active">» Private Bathroom</li>
+                          <li class="active">» 24-hour Room Service</li>
+                          <li class="active">» Turn-down Service</li>
+                        </ul>
+            </div>
+          </div>
+                      <div class="row push-top-10">
+            <div class="col-md-12">
+              <h5 style="color: #ff7802">Room Cancellation Policy</h5>
+              <div ng-bind-html="rooms.room_cancel_policies"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+        <div class="total-section">
+            <div class="price-details" style="margin: 10px;">
+                <button type="Submit" name="reserve" id="reserve_btn" class="btn book-btn" style="background: #005aaa;border-color: #005aaa;" ng-click="goto()">Reserve</button>
+            </div>
+            <div class="price-details">
+            <h2 class="price-tag" style="margin: 10px 0">
+            <small>Total:</small>
+            <i class="fa fa-dollar"></i><span id="grand-total"  ng-init="roomrateval(rooms)"></span>
+            <small>USD</small>
+            </h2>
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+
+    <a href="javascript:;" class="show-more" ng-if="roomcheckvalue"><i class="fa fa-caret-right"></i> Show More</a>
+
+
+
+  <div class="row" style="border-radius: 5px;padding: 15px;font-size: 20px;" ng-if="roomcheckvalue"><div class="error" style="text-align:center;color:#f70b0b;font-size: 16px;">Sorry, No rooms are available. Search other dates or hotels.</div></div>
+
+
+  <div class="modal fade" id="modalShowMsg" tabindex="-1" role="dialog" aria-labelledby="mymodalShowMsg" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body" style="padding: 30px 10px;text-align: center;">
+          <div id="showmsg" class="red"></div>
+        </div>
+        <div class="modal-footer" style="padding: 10px;">
+          <button style="background: #005aaa;color: #FFF;" type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      clcMinStay();
+      selected_rooms();
+    })
+    function clcMinStay(){
+      var arr = [];
+      $('.toggle-select').each(function(){
+        var minhtml = parseInt($(this).parent().parent().parent().find('.min_stay').text());
+        if(minhtml > '<?php echo $nights ?>'){
+          if($(this).is(':checked')){
+            $('.book-btn').addClass('minbtn');
+            $('.book-btn').removeAttr('type');
+            $('.book-btn').attr('type','button');
+            // console.log(minhtml)
+            arr.push(minhtml);
+          }
+        } else {
+          $('.book-btn').removeClass('minbtn');
+          $('.book-btn').removeAttr('type');
+          $('.book-btn').attr('type','submit');
+        }
+      });
+      // console.log(arr.length);
+      if(arr.length > 0) {
+        var maxval = Math.max.apply(Math,arr);
+        // console.log(maxval);
+        if(maxval > 0){
+          $('.book-btn').attr('data-val', maxval);
+        }
+      } else {
+        $('.book-btn').removeClass('minbtn');
+        $('.book-btn').removeAttr('type');
+        $('.book-btn').attr('type','submit');
+      }
+    }
+
+   $('#reserve_btn').on('click', function(){
+    var data = parseInt($(this).attr('data-val'));
+    //alert('sss');
+    //alert($(this).hasClass("minbtn"));
+    if($(this).hasClass("avd_notify")){
+      var ad_notify = parseInt($('#dmindays').val());
+      $('#showmsg').html('Check-in date needs to be '+ad_notify+' Days or more from  Today\'s date.');
+      $('#modalShowMsg').modal('show');
+    } else if($(this).hasClass("minbtn")){
+        if(data > 0 && data > '<?php echo $nights ?>'){
+          //$('#showmsg').html('Check-in date Needs to be '+ data +' days or more  from today.');
+          $('#showmsg').html(data+' Nights Minimum Stay required for selected room.');
+          $('#modalShowMsg').modal('show');
+          return false;
+        }
+    }
+   });
+
+    $('.details-link').on('click', function(e){
+      e.preventDefault();
+      $(this).parent().parent().parent().parent().find('.details-content').slideToggle();
+    });
+
+    // Show hide more rooms
+    $('.rooms_loop').each(function(i){
+      if(i>9){
+        $(this).addClass("more_rooms");
+      }
+    });
+    $('.show-more').on('click', function(){
+      var _html = $(this).html();
+      if(_html == '<i class="fa fa-caret-right"></i> Show More'){
+        $('.more_rooms').show();
+        $(this).html('<i class="fa fa-caret-right"></i> Hide Rooms');
+      } else if(_html == '<i class="fa fa-caret-right"></i> Hide Rooms'){
+        $('.more_rooms').hide();
+        $(this).html('<i class="fa fa-caret-right"></i> Show More');
+      }
+    });
+
+    $('.button-toggle').on('click', function(){
+      $(this).closest('.avail_rooms').find('.rooms_loop').removeClass('activeone');
+      $(this).closest('.avail_rooms').find('.rooms_loop').addClass('inactiveone');
+      $(this).closest('.rooms_loop').removeClass('inactiveone');
+      $(this).closest('.rooms_loop').addClass('activeone');
+      $('#sel-price').html('');
+      selected_rooms();
+      clcMinStay();
+    });
+
+    function selected_rooms(){
+      var total = 0;
+      var currency = 0;
+      // var roomname = [];
+      $('.activeone').each(function(){
+        // roomname.push('<span class="comma_list">, </span>'+$(this).find('.room-name').html());
+        currency = numeral($(this).find('.price-val-total:visible').html().trim())
+        total = parseFloat(total) + currency.value();
+      });
+      $('#grand-total').html(numeral(total).format('0,0.00'));
+      // $('#sel-room').html(roomname);
+    }
+  </script>
+
+  <style type="text/css">
+    /*#rooms_info .rooms_loop:nth-of-type(1n+11){
+      display: none;
+    }*/
+    .more_rooms{
+      display: none;
+    }
+    .inactiveone{
+      /*display: none;*/
+    }
+    .hotel-dtls-amenities ul li,.rooms_loop ul li{
+      font-size: 13px;
+    }
+    .avail_rooms .rooms_loop.activeone {
+      /* border: 1px dashed #7db921 !important; */
+       margin: 0;
+    }
+    .moreicon {
+      color: #fff;
+      background: rgba(51, 51, 51, 0.65);
+      padding: 4px;
+      font-size: 20px;
+      border-radius: 5px;
+    }
+    .room-gallery-div.imgs-grid.imgs-grid-1 .imgs-grid-image {
+      height: 90px;
+      padding: 0;
+    }
+    .room-gallery-div.imgs-grid .imgs-grid-image .image-wrap img {
+      height: 90px;
+    }
+    .room-gallery-div.imgs-grid .imgs-grid-image .view-all .view-all-cover {
+      background-color: transparent;
+    }
+    .room-gallery-div.imgs-grid .imgs-grid-image .view-all .view-all-text {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      top: auto;
+    }
+  </style>

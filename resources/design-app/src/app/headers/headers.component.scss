@@ -1,0 +1,21 @@
+li.nav-item a {
+  color: #005eb8 !important;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.badge{
+  background: #00467e;
+}
+
+span.caret{
+  color: gray !important;
+}
+
+.navbar.navbar-dark .navbar-toggler-icon{
+  background-image: url(../../assets/images/icon.png) no-repeat;
+}
+
+button.navbar-toggler > span.navbar-toggler-icon{
+  background-image: url(../../assets/images/icon.png) no-repeat;
+}

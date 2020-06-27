@@ -1,0 +1,139 @@
+{
+  "menu": [
+    {
+      "url": "supplier/dashboard",
+      "name": "Dashboard",
+      "slug": "dashboard",
+      "icon": "dashboard"
+    },
+    {
+      "url": "#",
+      "name": "Hotels",
+      "slug": "hotels",
+      "icon": "building",
+      "dropdown": "1",
+      "submenu": [
+        {
+          "url": "supplier/hotel-add",
+          "name": "Add Hotel",
+          "slug": "add-hotel",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "supplier/hotel-list",
+          "name": "Hotel List",
+          "slug": "hotel-list",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    },
+    {
+      "url": "#",
+      "name": "Rooms",
+      "slug": "rooms",
+      "icon": "thumbnails-big",
+      "dropdown": "1",
+      "submenu": [
+        {
+          "url": "supplier/app-todo",
+          "name": "Add Room Type",
+          "slug": "add-room-type",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "supplier/form-wizard",
+          "name": "Add Room",
+          "slug": "add-room",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "supplier/content-grid",
+          "name": "Room List",
+          "slug": "room-list",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    },
+    {
+      "url": "#",
+      "name": "Room Rates",
+      "slug": "room-rates",
+      "icon": "grid",
+      "dropdown": "1",
+      "submenu": [
+        {
+          "url": "supplier/app-calendar",
+          "name": "Add Season",
+          "slug": "room-rates-add-season",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "supplier/app-calendar",
+          "name": "Add Cancellation Policy",
+          "slug": "room-rates-add-cancellation-policy",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "supplier/app-calendar",
+          "name": "Add / Update Room Rates",
+          "slug": "add-room-rates",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "supplier/app-calendar",
+          "name": "Room Rates Calendar",
+          "slug": "room-rates-calendar",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "supplier/app-calendar",
+          "name": "Edit Room Rates",
+          "slug": "edit-room-rates",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    },
+    {
+      "url": "#",
+      "name": "Room Allotments",
+      "slug": "room-allotments",
+      "icon": "tag",
+      "dropdown": "1",
+      "submenu": [
+        {
+          "url": "supplier/form-validation",
+          "name": "Assign Room Allotment",
+          "slug": "assign-room-allotment",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "supplier/form-repeater",
+          "name": "Room Allotment Calendar",
+          "slug": "room-allotment-calendar",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    },
+    {
+      "url": "#",
+      "name": "Promotions",
+      "slug": "promotions",
+      "icon": "morph-bookmark",
+      "dropdown": "1",
+      "submenu": [
+        {
+          "url": "supplier/table",
+          "name": "Add Promotion",
+          "slug": "add-promotion",
+          "icon": "bx bx-right-arrow-alt"
+        },
+        {
+          "url": "supplier/datatable",
+          "name": "Promotion List",
+          "slug": "promotion-list",
+          "icon": "bx bx-right-arrow-alt"
+        }
+      ]
+    }
+  ]
+}
